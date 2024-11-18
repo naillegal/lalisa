@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="vendors/bootstrap.min.css" />
+    <title>Lalisa - Login</title>
+  </head>
+  <body>
+    <section id="main">
+      <img class="clip-img" src="images/login-clip-path.png" alt="Clip">
+      <section id="animation">
+        <img src="images/login-animation.png" alt="Animation" />
+      </section>
+      <section id="login-form">
+        <div class="main-box">
+          <img src="images/logo-lalisa.png" alt="" />
+          <p class="img-title">Estetik Mərkəz</p>
+          <h2>Hesabınıza daxil olun</h2>
+          <p>Yenidən xoş gəlmisiniz! zəhmət olmasa məlumatınızı daxil edin</p>
+          <form action="">
+            <div class="form-group">
+              <label for="username">E-poçt və ya istifadəçi adı</label>
+              <br />
+              <input type="text" placeholder="E-poçt və ya istifadəçi adı" />
+            </div>
+            <div class="form-group">
+              <label for="password">Parol</label>
+              <br />
+              <input type="password" placeholder="Parol" />
+            </div>
+            <div class="remember-me">
+              <div class="remember-button" id="remember-toggle"></div>
+              <input
+                type="hidden"
+                name="remember_me"
+                id="remember-me-input"
+                value="0"
+              />
+              <div class="remember-title">Məni xatırla</div>
+            </div>
+            <button class="submit">Daxil ol</button>
+          </form>
+        </div>
+      </section>
+    </section>
+
+    <script src="scripts/main.js"></script>
+  </body>
+</html>

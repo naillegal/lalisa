@@ -1,0 +1,195 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 0px;
+  min-height: 100vh;
+  background: linear-gradient(to right, rgb(93, 220, 152) 50%, #e3f8ee 50%);
+  position: relative;
+  overflow: hidden;
+}
+#main .clip-img {
+  width: 15%;
+  height: 150vh;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+#main::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  z-index: 1;
+}
+#main #animation {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+#main #animation img {
+  max-width: 80%;
+  height: auto;
+  animation: slideIn 1s ease-in-out;
+}
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+#main #login-form {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+#main #login-form .main-box {
+  max-width: 400px;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+#main #login-form .main-box img {
+  max-width: 150px;
+}
+#main #login-form .main-box .img-title {
+  text-align: center;
+  color: rgba(102, 102, 102, 0.6901960784);
+}
+#main #login-form .main-box h2 {
+  font-size: 1.8rem;
+  color: #333333;
+  margin-bottom: 10px;
+  text-align: left;
+  font-weight: bold;
+}
+#main #login-form .main-box p {
+  font-size: 0.9rem;
+  color: #666666;
+  margin-bottom: 10px;
+  text-align: left;
+}
+#main #login-form .main-box .form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+#main #login-form .main-box .form-group label {
+  font-size: 0.85rem;
+  padding: 15px 0px;
+  color: black;
+}
+#main #login-form .main-box .form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #dcdcdc;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+#main #login-form .main-box .form-group input:focus {
+  border-color: #62c78e;
+  outline: none;
+  box-shadow: 0 0 4px rgba(98, 199, 142, 0.5);
+}
+#main #login-form .main-box .remember-me {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+#main #login-form .main-box .remember-me .remember-button {
+  width: 44px;
+  height: 24px;
+  background-color: #c4c4c4;
+  border: 2px solid #999999;
+  border-radius: 12px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+#main #login-form .main-box .remember-me .remember-button::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-color: #000000;
+  border-radius: 50%;
+  top: 50%;
+  left: 4px;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+}
+#main #login-form .main-box .remember-me .remember-button.active {
+  background-color: #62c78e;
+  border-color: #62c78e;
+}
+#main #login-form .main-box .remember-me .remember-button.active::after {
+  left: calc(100% - 20px);
+}
+#main #login-form .main-box .remember-me .remember-title {
+  font-size: 0.85rem;
+  color: #444444;
+  margin-left: 10px;
+  margin-bottom: 2px;
+}
+#main #login-form .main-box .submit {
+  width: 100%;
+  padding: 10px;
+  background: rgba(98, 199, 142, 0.7529411765);
+  color: black;
+  font-weight: 500;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+#main #login-form .main-box .submit:hover {
+  background: #53b078;
+}
+
+@media (max-width: 991px) {
+  #main {
+    padding: 20px;
+    background: #e3f8ee;
+  }
+  #main #animation {
+    display: none;
+    margin-bottom: 20px;
+  }
+  #main #animation img {
+    max-width: 100%;
+  }
+  #main #login-form .main-box {
+    max-width: 100%;
+  }
+}
+@media (max-width: 1200px) {
+  .clip-img {
+    display: none;
+  }
+}/*# sourceMappingURL=style.css.map */
