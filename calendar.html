@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="vendors/bootstrap.min.css" />
+    <title>Lalisa - Calendar</title>
+  </head>
+  <body style="background-color: rgba(245, 246, 250, 1)">
+    <section id="layout">
+      <div id="sidebar">
+        <div>
+          <img src="images/logo-lalisa.png" alt="" />
+        </div>
+        <div class="sidebar-routes">
+          <div class="route d-flex">
+            <i class="fa-solid fa-envelope"></i>
+            <a href="#">Statiska</a>
+          </div>
+          <div class="route d-flex active">
+            <i class="fa-regular fa-calendar-days"></i>
+            <a href="#">Təqvim</a>
+          </div>
+          <div class="route d-flex">
+            <i class="fa-solid fa-gear"></i>
+            <a href="#">Xidmətlər</a>
+          </div>
+          <div class="route d-flex">
+            <i class="fa-regular fa-message"></i>
+            <a href="#">Bildiriş</a>
+          </div>
+          <div class="route d-flex">
+            <i class="fa-regular fa-heart"></i>
+            <a href="#">Müalicə</a>
+          </div>
+          <div class="route d-flex">
+            <i class="fa-solid fa-wallet"></i>
+            <a href="#">Cashback</a>
+          </div>
+          <div class="route d-flex">
+            <i class="fa-solid fa-file-lines"></i>
+            <a href="#">Səhifələr</a>
+          </div>
+          <div class="route d-flex">
+            <i class="fa-solid fa-square-binary"></i>
+            <a href="#">Endirim kodu</a>
+          </div>
+          <div class="route d-flex">
+            <i class="fa-solid fa-heart-pulse"></i>
+            <a href="#">Həkimlər</a>
+          </div>
+        </div>
+      </div>
+      <div id="responsive-sidebar">
+        <div>
+          <img src="images/small-logo.png" alt="" />
+        </div>
+        <div class="sidebar-routes">
+          <div class="route d-flex">
+            <a href="#">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+          </div>
+          <div class="route d-flex active">
+            <a href="#">
+              <i class="fa-regular fa-calendar-days"></i>
+            </a>
+          </div>
+          <div class="route d-flex">
+            <a href="#">
+              <i class="fa-solid fa-gear"></i>
+            </a>
+          </div>
+          <div class="route d-flex">
+            <a href="#">
+              <i class="fa-regular fa-message"></i>
+            </a>
+          </div>
+          <div class="route d-flex">
+            <a href="#">
+              <i class="fa-regular fa-heart"></i>
+            </a>
+          </div>
+          <div class="route d-flex">
+            <a href="#">
+              <i class="fa-solid fa-wallet"></i>
+            </a>
+          </div>
+          <div class="route d-flex">
+            <a href="#">
+              <i class="fa-solid fa-file-lines"></i>
+            </a>
+          </div>
+          <div class="route d-flex">
+            <a href="#">
+              <i class="fa-solid fa-square-binary"></i>
+            </a>
+          </div>
+          <div class="route d-flex">
+            <a href="#">
+              <i class="fa-solid fa-heart-pulse"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div id="navbar">
+        <div class="navbar-container">
+          <div class="d-flex align-items-center">
+            <div>
+              <i class="fa-solid fa-bars"></i>
+              <i class="fa-solid fa-arrow-right d-none"></i>
+            </div>
+            <div class="search-box">
+              <i class="fa-solid fa-magnifying-glass"></i
+              ><input type="search" placeholder="Search" />
+            </div>
+          </div>
+          <div class="d-flex align-items-center">
+            <div>
+              <i class="fa-regular fa-bell"></i>
+            </div>
+            <div class="d-flex align-items-center">
+              <div>
+                <img
+                  class="user-picture"
+                  src="images/mini-profile-picture.png"
+                  alt=""
+                />
+              </div>
+              <div class="d-flex align-items-center">
+                <div class="username">Farid Mirzayev</div>
+                <div><i class="fa-solid fa-chevron-down"></i></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="slot">
+      <div class="slot-title">
+        <h4>Təqvim</h4>
+      </div>
+
+      <div class="d-flex gap-1 curr-and-cal">
+        <div class="currency-container">
+          <div class="currency-button-box">
+            <button>
+              <i class="fa-regular fa-square-plus"></i> Add Currency
+            </button>
+          </div>
+
+          <div class="currencies">
+            <div class="currency">
+              <div class="status-indicator orange"></div>
+              <div class="currency-details">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <p class="date">Cümə 1 Noyabr</p>
+                    <p class="time">10:30am - 5:30pm</p>
+                    <p class="name">Farid Mirzayev</p>
+                  </div>
+                  <div>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="currency">
+              <div class="status-indicator orange"></div>
+              <div class="currency-details">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <p class="date">Cümə 1 Noyabr</p>
+                    <p class="time">10:30am - 5:30pm</p>
+                    <p class="name">Farid Mirzayev</p>
+                  </div>
+                  <div>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="currency">
+              <div class="status-indicator orange"></div>
+              <div class="currency-details">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <p class="date">Cümə 1 Noyabr</p>
+                    <p class="time">10:30am - 5:30pm</p>
+                    <p class="name">Farid Mirzayev</p>
+                  </div>
+                  <div>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="calendar-container">
+          <div class="header d-flex justify-content-between align-items-center">
+            <div class="present-month" id="presentMonth">Noyabr 2024</div>
+            <div class="view-options d-flex">
+              <div class="view-option">Gün</div>
+              <div class="view-option">Həftə</div>
+              <div class="view-option active">Ay</div>
+            </div>
+            <div class="d-flex rightside gap-2">
+              <div class="arrows d-flex">
+                <div class="arrow prev-arrow">
+                  <i class="fa-solid fa-chevron-left"></i>
+                </div>
+                <div class="arrow next-arrow">
+                  <i class="fa-solid fa-chevron-right"></i>
+                </div>
+              </div>
+              <div class="today" id="todayButton">Bu Gün</div>
+            </div>
+          </div>
+          <div class="calendar" id="calendarTable">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="scripts/sidebarToggle.js"></script>
+    <script src="scripts/calendar.js"></script>
+    <script src="scripts/main.js"></script>
+  </body>
+</html>
