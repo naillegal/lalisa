@@ -471,7 +471,7 @@
     width: calc(100% - 92px);
   }
 }
-#slot .slot-title {
+#slot .slot-calendar-title {
   padding: 10px;
 }
 #slot .curr-and-cal {
@@ -576,6 +576,7 @@
   font-size: 14px;
   color: rgb(84, 186, 79);
   cursor: pointer;
+  transition: 0.2s ease-in-out;
 }
 #slot .curr-and-cal .calendar-container .header .view-options .view-option:hover {
   background-color: #f1f1f1;
@@ -597,6 +598,7 @@
   border: 1px solid rgb(84, 186, 79);
   border-radius: 10px;
   cursor: pointer;
+  transition: 0.2s ease-in-out;
 }
 #slot .curr-and-cal .calendar-container .header .rightside .arrows .arrow i {
   color: rgb(84, 186, 79);
@@ -613,6 +615,7 @@
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
+  transition: 0.2s ease-in-out;
 }
 #slot .curr-and-cal .calendar-container .header .rightside .today:hover {
   background-color: #218838;
@@ -704,4 +707,163 @@
   background-color: rgb(84, 186, 79);
   padding: 7px;
   border-radius: 50%;
+}
+
+#slot .users-bg {
+  width: 100%;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+#slot .users-bg .search-and-add-user {
+  margin-bottom: 20px;
+}
+#slot .users-bg .search-and-add-user .search-section {
+  display: flex;
+  gap: 10px;
+}
+#slot .users-bg .search-and-add-user .search-section .search-box {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+#slot .users-bg .search-and-add-user .search-section .search-box i {
+  margin-right: 10px;
+  color: #888;
+}
+#slot .users-bg .search-and-add-user .search-section .search-box input {
+  border: none;
+  outline: none;
+  background: none;
+}
+#slot .users-bg .search-and-add-user .search-section .status-select select {
+  padding: 5px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  outline: none;
+}
+#slot .users-bg .search-and-add-user .add-user button {
+  background-color: rgb(84, 186, 79);
+  color: #ffffff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s ease-in-out;
+}
+#slot .users-bg .search-and-add-user .add-user button i {
+  margin-right: 5px;
+}
+#slot .users-bg .search-and-add-user .add-user button:hover {
+  background-color: #218838;
+}
+#slot .users-bg .users-table {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border: 1px solid #e0e0e0;
+}
+#slot .users-bg .users-table table {
+  width: 100%;
+  border-collapse: collapse;
+  color: rgb(75, 85, 99);
+}
+#slot .users-bg .users-table table thead {
+  background-color: rgb(245, 246, 250);
+}
+#slot .users-bg .users-table table thead th {
+  padding: 30px 20px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+  color: rgb(17, 24, 39);
+  font-weight: 500;
+}
+#slot .users-bg .users-table table thead th:last-child {
+  border-top-right-radius: 15px;
+}
+#slot .users-bg .users-table table thead th:first-child {
+  border-top-left-radius: 15px;
+}
+#slot .users-bg .users-table table tbody tr td {
+  padding: 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+#slot .users-bg .users-table table tbody tr td .user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#slot .users-bg .users-table table tbody tr td .user-info img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+#slot .users-bg .users-table table tbody tr:last-child td {
+  border-bottom: none;
+}
+#slot .users-bg .users-table table .custom-checkbox {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+#slot .users-bg .users-table table .custom-checkbox input[type=checkbox] {
+  display: none;
+}
+#slot .users-bg .users-table table .custom-checkbox .checkmark {
+  width: 16px;
+  height: 16px;
+  border: 1px solid rgb(107, 114, 128);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+}
+#slot .users-bg .users-table table .custom-checkbox .checkmark i {
+  font-size: 14px;
+  color: transparent;
+  transition: color 0.3s ease;
+}
+#slot .users-bg .users-table table .custom-checkbox input[type=checkbox]:checked + .checkmark {
+  background-color: rgb(84, 186, 79);
+  border-color: rgb(84, 186, 79);
+}
+#slot .users-bg .users-table table .custom-checkbox input[type=checkbox]:checked + .checkmark i {
+  color: #ffffff;
+}
+#slot .users-bg .pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+}
+#slot .users-bg .pagination span {
+  color: rgb(75, 85, 99);
+  font-size: 14px;
+}
+#slot .users-bg .pagination .pagination-buttons {
+  display: flex;
+  gap: 5px;
+}
+#slot .users-bg .pagination .pagination-buttons button {
+  padding: 5px 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: rgb(235, 236, 239);
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  font-weight: 500;
+  color: rgb(75, 85, 99);
+}
+#slot .users-bg .pagination .pagination-buttons button:hover {
+  background-color: rgb(84, 186, 79);
+  color: white;
+}
+#slot .users-bg .pagination .pagination-buttons button.active {
+  background-color: rgb(84, 186, 79);
+  color: #ffffff;
 }/*# sourceMappingURL=style.css.map */
