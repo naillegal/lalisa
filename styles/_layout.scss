@@ -24,46 +24,45 @@
     .sidebar-routes {
       width: 100%;
       margin-top: 10px;
+      a {
+        margin: 0;
+        font-size: 16px;
+        color: $text-color;
+        text-decoration: none;
+        font-weight: 500;
+        .route {
+          display: flex;
+          align-items: center;
+          padding: 10px 15px;
+          margin: 10px 0px;
+          border-radius: 8px;
+          transition: all 0.3s ease;
+          cursor: pointer;
 
-      .route {
-        display: flex;
-        align-items: center;
-        padding: 10px 15px;
-        margin: 10px 0px;
-        border-radius: 8px;
-        transition: all 0.3s ease;
-        cursor: pointer;
+          &:hover {
+            background: rgba(40, 167, 69, 0.1); 
+          }
 
-        &:hover {
-          background: rgba(40, 167, 69, 0.1); // Hover effekti
-        }
-
-        i {
-          font-size: $icon-size;
-          color: $text-color;
-          margin-right: 10px;
-        }
-
-        a {
-          margin: 0;
-          font-size: 16px;
-          color: $text-color;
-          text-decoration: none;
-          font-weight: 500;
+          i {
+            font-size: $icon-size;
+            color: $text-color;
+            margin-right: 10px;
+          }
         }
       }
-
       .route.active {
-        background: $active-color; // Aktiv rəng
+        background: $active-color;
         color: #fff;
 
         i {
           color: #fff;
         }
-
         a {
           color: #fff;
           text-decoration: none;
+        }
+        &:hover{
+          background: $active-color;
         }
       }
     }
@@ -73,6 +72,7 @@
     background: #fff; // Ağ fon
     width: 87px;
     min-height: 100vh; // Tam ekran hündürlüyü
+    height: 100vh;
     padding: 20px;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1); // Sağ tərəfə kölgə
     display: none;
@@ -82,6 +82,7 @@
     top: 0;
     left: 0;
     z-index: 100;
+    overflow: auto;
 
     img {
       width: 80%;
@@ -103,7 +104,9 @@
         cursor: pointer;
 
         &:hover {
-          background: rgba(40, 167, 69, 0.1); // Hover effekti
+          i {
+            color: $active-color;
+          }
         }
 
         i {
@@ -122,11 +125,10 @@
       }
 
       .route.active {
-        background: $active-color;
         color: #fff;
 
         i {
-          color: #fff;
+          color: $active-color;
         }
 
         a {
@@ -262,34 +264,33 @@
   opacity: 1;
 }
 
-@media(max-width:768px) {
-  #layout{
-    #sidebar{
+@media (max-width: 768px) {
+  #layout {
+    #sidebar {
       display: none;
     }
-    #responsive-sidebar{
+    #responsive-sidebar {
       display: flex;
     }
-    #navbar{
+    #navbar {
       width: calc(100% - 92px);
       .navbar-container {
         display: flex;
         justify-content: start;
         align-items: center;
         width: 100%;
-  
+
         .fa-bars,
         .fa-arrow-right {
           display: none;
-         
         }
-        .search-box{
+        .search-box {
           display: none;
         }
       }
     }
   }
-  #slot{
+  #slot {
     width: calc(100% - 92px);
   }
 }

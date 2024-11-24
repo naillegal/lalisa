@@ -64,8 +64,8 @@
     }
 
     .users-table {
-      border-top-left-radius: 15px;
-      border-top-right-radius: 15px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
       border: 1px solid #e0e0e0;
       table {
         width: 100%;
@@ -81,10 +81,10 @@
             color: rgba(17, 24, 39, 1);
             font-weight: 500;
             &:last-child {
-              border-top-right-radius: 15px;
+              border-top-right-radius: 10px;
             }
             &:first-child {
-              border-top-left-radius: 15px;
+              border-top-left-radius: 10px;
             }
           }
         }
