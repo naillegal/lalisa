@@ -10,9 +10,10 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="stylesheet" href="vendors/bootstrap.min.css" />
-    <title>Lalisa - Calendar</title>
+    <title>Lalisa - Users</title>
   </head>
   <body style="background-color: rgba(245, 246, 250, 1)">
     <section id="layout">
@@ -28,7 +29,7 @@
             </div>
           </a>
           <a href="calendar.html">
-            <div class="route d-flex active">
+            <div class="route d-flex">
               <i class="fa-regular fa-calendar-days"></i>
               Təqvim
             </div>
@@ -46,7 +47,7 @@
             </div>
           </a>
           <a href="notification.html">
-            <div class="route d-flex">
+            <div class="route d-flex active">
               <i class="fa-regular fa-message"></i>
               Bildiriş
             </div>
@@ -78,7 +79,7 @@
           <a href="#">
             <div class="route d-flex">
               <i class="fa-solid fa-heart-pulse"></i>
-             Həkimlər
+              Həkimlər
             </div>
           </a>
         </div>
@@ -93,7 +94,7 @@
               <i class="fa-solid fa-envelope"></i>
             </a>
           </div>
-          <div class="route d-flex active">
+          <div class="route d-flex">
             <a href="calendar.html">
               <i class="fa-regular fa-calendar-days"></i>
             </a>
@@ -108,7 +109,7 @@
               <i class="fa-solid fa-gear"></i>
             </a>
           </div>
-          <div class="route d-flex">
+          <div class="route d-flex active">
             <a href="notification.html">
               <i class="fa-regular fa-message"></i>
             </a>
@@ -175,94 +176,42 @@
     </section>
 
     <section id="slot">
-      <div class="slot-title">
-        <h4>Təqvim</h4>
-      </div>
-
-      <div class="d-flex gap-1 curr-and-cal">
-        <div class="currency-container">
-          <div class="currency-button-box">
-            <button>
-              <i class="fa-regular fa-square-plus"></i> Add Currency
-            </button>
-          </div>
-
-          <div class="currencies">
-            <div class="currency">
-              <div class="status-indicator orange"></div>
-              <div class="currency-details">
-                <div class="d-flex justify-content-between align-items-center">
-                  <div>
-                    <p class="date">Cümə 1 Noyabr</p>
-                    <p class="time">10:30am - 5:30pm</p>
-                    <p class="name">Farid Mirzayev</p>
-                  </div>
-                  <div>
-                    <i class="fa-solid fa-ellipsis-vertical"></i>
-                  </div>
-                </div>
-              </div>
+      <div class="upside-bg">
+        <div class="notification-send-relative">
+          <img src="images/notification-send-bg.png" alt="" />
+          <div>
+            <div class="notification-send-text-absolute">
+              <h1>İstifadəçiləri seçdiniz.</h1>
+              <p>
+                Siz artıq bildiriş göndərmək üçün istifadəçiləri uğurla
+                seçdiniz. İndi bu istifadəçilərə göndərmək istədiyiniz mesajı
+                yaza bilərsiniz. Mesajınızın dəqiq, aydın və cəlbedici olmasına
+                diqqət yetirin ki, qarşı tərəfdə daha yaxşı təsir yaratsın.
+              </p>
             </div>
-            <div class="currency">
-              <div class="status-indicator green"></div>
-              <div class="currency-details">
-                <div class="d-flex justify-content-between align-items-center">
-                  <div>
-                    <p class="date">Cümə 1 Noyabr</p>
-                    <p class="time">10:30am - 5:30pm</p>
-                    <p class="name">Farid Mirzayev</p>
-                  </div>
-                  <div>
-                    <i class="fa-solid fa-ellipsis-vertical"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="currency">
-              <div class="status-indicator blue"></div>
-              <div class="currency-details">
-                <div class="d-flex justify-content-between align-items-center">
-                  <div>
-                    <p class="date">Cümə 1 Noyabr</p>
-                    <p class="time">10:30am - 5:30pm</p>
-                    <p class="name">Farid Mirzayev</p>
-                  </div>
-                  <div>
-                    <i class="fa-solid fa-ellipsis-vertical"></i>
-                  </div>
-                </div>
-              </div>
+            <div class="notification-send-animation-absolute">
+              <img src="images/notification-send-animation.png" alt="" />
             </div>
           </div>
         </div>
-        <div class="calendar-container">
-          <div class="header d-flex justify-content-between align-items-center">
-            <div class="present-month" id="presentMonth">Noyabr 2024</div>
-            <div class="view-options d-flex">
-              <div class="view-option">Gün</div>
-              <div class="view-option">Həftə</div>
-              <div class="view-option active">Ay</div>
-            </div>
-            <div class="d-flex rightside gap-2">
-              <div class="arrows d-flex">
-                <div class="arrow prev-arrow">
-                  <i class="fa-solid fa-chevron-left"></i>
-                </div>
-                <div class="arrow next-arrow">
-                  <i class="fa-solid fa-chevron-right"></i>
-                </div>
-              </div>
-              <div class="today" id="todayButton">Bu Gün</div>
-            </div>
-          </div>
-          <div class="calendar" id="calendarTable">
-          </div>
+      </div>
+      <div class="areainput">
+        <div class="areainput-title">
+          <h1>Bildiriş bölməsi</h1>
+        </div>
+        <div class="area-main">
+          <textarea placeholder="Bildir..."></textarea>
+        </div>
+        <div class="area-button">
+          <button>Göndər</button>
         </div>
       </div>
     </section>
 
+    <!-- git deploy commit  -->
+
+    <script src="scripts/users.js"></script>
     <script src="scripts/sidebarToggle.js"></script>
-    <script src="scripts/calendar.js"></script>
     <script src="scripts/main.js"></script>
   </body>
 </html>

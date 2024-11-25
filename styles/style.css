@@ -475,7 +475,7 @@
     width: calc(100% - 92px);
   }
 }
-#slot .slot-calendar-title {
+#slot .slot-title {
   padding: 10px;
 }
 #slot .curr-and-cal {
@@ -839,21 +839,21 @@
 #slot .users-bg .users-table table .custom-checkbox input[type=checkbox]:checked + .checkmark i {
   color: #ffffff;
 }
-#slot .users-bg .pagination {
+#slot .users-bg .pagination-users {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 40px;
 }
-#slot .users-bg .pagination span {
+#slot .users-bg .pagination-users span {
   color: rgb(75, 85, 99);
   font-size: 14px;
 }
-#slot .users-bg .pagination .pagination-buttons {
+#slot .users-bg .pagination-users .pagination-buttons {
   display: flex;
   gap: 5px;
 }
-#slot .users-bg .pagination .pagination-buttons button {
+#slot .users-bg .pagination-users .pagination-buttons button {
   padding: 5px 12px;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
@@ -863,11 +863,282 @@
   font-weight: 500;
   color: rgb(75, 85, 99);
 }
-#slot .users-bg .pagination .pagination-buttons button:hover {
+#slot .users-bg .pagination-users .pagination-buttons button:hover {
   background-color: rgb(84, 186, 79);
   color: white;
 }
-#slot .users-bg .pagination .pagination-buttons button.active {
+#slot .users-bg .pagination-users .pagination-buttons button.active {
+  background-color: rgb(84, 186, 79);
+  color: #ffffff;
+}
+
+#slot .notification-bg {
+  width: 100%;
+  padding: 0px 5px;
+}
+#slot .notification-bg .search-and-filter-notification {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 25px;
+}
+#slot .notification-bg .search-and-filter-notification .filter .filter-select label {
+  color: rgb(84, 186, 79);
+  font-size: 14px;
+  font-weight: 500;
+  padding-bottom: 10px;
+}
+#slot .notification-bg .search-and-filter-notification .filter .filter-select select {
+  padding: 5px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  outline: none;
+}
+#slot .notification-bg .search-and-filter-notification .filter .date-inputs label {
+  color: rgb(84, 186, 79);
+  font-size: 14px;
+  font-weight: 500;
+  padding-bottom: 10px;
+}
+#slot .notification-bg .search-and-filter-notification .filter .date-inputs input[type=date] {
+  padding: 5px 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  outline: none;
+}
+#slot .notification-bg .search-and-filter-notification .search-section {
+  display: flex;
+  gap: 10px;
+}
+#slot .notification-bg .search-and-filter-notification .search-section .search-box {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+#slot .notification-bg .search-and-filter-notification .search-section .search-box i {
+  margin-right: 10px;
+  color: #888;
+}
+#slot .notification-bg .search-and-filter-notification .search-section .search-box input {
+  border: none;
+  outline: none;
+  background: none;
+}
+#slot .notification-bg .notification-table {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border: 1px solid #e0e0e0;
+}
+#slot .notification-bg .notification-table table {
+  width: 100%;
+  border-collapse: collapse;
+  color: rgb(75, 85, 99);
+}
+#slot .notification-bg .notification-table table thead th {
+  padding: 20px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+  color: rgb(17, 24, 39);
+  font-weight: 500;
+}
+#slot .notification-bg .notification-table table thead th:last-child {
+  border-top-right-radius: 10px;
+  text-align: center;
+}
+#slot .notification-bg .notification-table table thead th:first-child {
+  border-top-left-radius: 10px;
+}
+#slot .notification-bg .notification-table table tbody tr td {
+  padding: 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+#slot .notification-bg .notification-table table tbody tr td .user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#slot .notification-bg .notification-table table tbody tr td .user-info img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+#slot .notification-bg .notification-table table tbody tr td:last-child {
+  text-align: center;
+}
+#slot .notification-bg .notification-table table tbody tr:last-child td {
+  border-bottom: none;
+}
+#slot .notification-bg .notification-table table .custom-checkbox {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+#slot .notification-bg .notification-table table .custom-checkbox input[type=checkbox] {
+  display: none;
+}
+#slot .notification-bg .notification-table table .custom-checkbox .checkmark {
+  width: 16px;
+  height: 16px;
+  border: 1px solid rgb(107, 114, 128);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+}
+#slot .notification-bg .notification-table table .custom-checkbox .checkmark i {
+  font-size: 14px;
+  color: transparent;
+  transition: color 0.3s ease;
+}
+#slot .notification-bg .notification-table table .custom-checkbox input[type=checkbox]:checked + .checkmark {
+  background-color: rgb(84, 186, 79);
+  border-color: rgb(84, 186, 79);
+}
+#slot .notification-bg .notification-table table .custom-checkbox input[type=checkbox]:checked + .checkmark i {
+  color: #ffffff;
+}
+#slot .pagination-notification {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 40px 0px;
+  padding: 0px 15px;
+}
+#slot .pagination-notification button {
+  padding: 12px 44px;
+  font-size: 16px;
+  font-weight: 500;
+  color: black;
+  background-color: rgb(255, 255, 255);
+  border: 2px solid rgb(209, 213, 219);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+#slot .pagination-notification button:hover {
+  background-color: rgb(84, 186, 79);
+  border: 2px solid rgb(84, 186, 79);
+  color: white;
+}
+#slot .pagination-notification .pagination-buttons {
+  display: flex;
+  gap: 5px;
+}
+#slot .pagination-notification .pagination-buttons button {
+  padding: 5px 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: rgb(235, 236, 239);
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  font-weight: 500;
+  color: rgb(75, 85, 99);
+}
+#slot .pagination-notification .pagination-buttons button:hover {
+  background-color: rgb(84, 186, 79);
+  color: white;
+}
+#slot .pagination-notification .pagination-buttons button.active {
+  background-color: rgb(84, 186, 79);
+  color: #ffffff;
+}
+#slot .upside-bg {
+  font-family: Poppins;
+  padding: 30px 0px;
+}
+#slot .upside-bg .notification-send-relative {
+  position: relative;
+  padding: 0px 10px;
+}
+#slot .upside-bg .notification-send-relative img {
+  width: 100%;
+  height: 500px;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+#slot .upside-bg .notification-send-relative .notification-send-text-absolute {
+  position: absolute;
+  top: 40%;
+  left: 10%;
+  transform: translate(0%, -50%);
+}
+#slot .upside-bg .notification-send-relative .notification-send-text-absolute h1 {
+  font-size: 40px;
+  font-weight: 600;
+  color: rgb(0, 0, 0);
+}
+#slot .upside-bg .notification-send-relative .notification-send-text-absolute p {
+  font-size: 18px;
+  width: 400px;
+  color: rgb(0, 0, 0);
+  font-weight: 300;
+}
+#slot .upside-bg .notification-send-relative .notification-send-animation-absolute {
+  position: absolute;
+  top: 0%;
+  right: 10%;
+}
+#slot .upside-bg .notification-send-relative .notification-send-animation-absolute img {
+  width: 100%;
+}
+#slot .areainput {
+  width: 98%;
+  padding: 20px;
+}
+#slot .areainput .areainput-title {
+  margin-bottom: 15px;
+}
+#slot .areainput .areainput-title h1 {
+  font-size: 30px;
+  font-weight: 600;
+  color: rgb(17, 24, 39);
+}
+#slot .areainput .area-main {
+  margin-bottom: 15px;
+}
+#slot .areainput .area-main textarea {
+  margin-top: 10px;
+  width: 100%;
+  height: 350px;
+  padding: 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #4b5563;
+  resize: none;
+  outline: none;
+  box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.2s ease;
+}
+#slot .areainput .area-main textarea:focus {
+  border-color: rgb(84, 186, 79);
+}
+#slot .areainput .area-button {
+  text-align: right;
+}
+#slot .areainput .area-button button {
+  padding: 10px 40px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  font-weight: 400;
+  color: black;
+  background-color: white;
+}
+#slot .areainput .area-button button:hover {
+  background-color: rgb(84, 186, 79);
+  color: white;
+}
+#slot .areainput .area-button button.active {
   background-color: rgb(84, 186, 79);
   color: #ffffff;
 }/*# sourceMappingURL=style.css.map */
