@@ -250,20 +250,20 @@
   }
   .areainput {
     width: 98%;
-  padding: 20px;
+    padding: 20px;
     .areainput-title {
       margin-bottom: 15px;
-  
+
       h1 {
         font-size: 30px; // Başlıq mətn ölçüsü
         font-weight: 600; // Qalın mətn
         color: rgba(17, 24, 39, 1); // Tünd boz rəng
       }
     }
-  
+
     .area-main {
       margin-bottom: 15px;
-  
+
       textarea {
         margin-top: 10px;
         width: 100%; // Tam genişlik
@@ -277,16 +277,16 @@
         outline: none; // Fokus zamanı çərçivəni gizlədir
         box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.1); // Daxili kölgə
         transition: border-color 0.2s ease;
-  
+
         &:focus {
           border-color: rgba(84, 186, 79, 1); // Fokus zamanı yaşıl sərhəd
         }
       }
     }
-  
+
     .area-button {
       text-align: right;
-  
+
       button {
         padding: 10px 40px;
         border: 1px solid #e0e0e0;
@@ -309,5 +309,4 @@
       }
     }
   }
-  
 }

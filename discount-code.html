@@ -10,7 +10,10 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="stylesheet" href="vendors/bootstrap.min.css" />
     <title>Lalisa - Users</title>
@@ -47,7 +50,7 @@
             </div>
           </a>
           <a href="notification.html">
-            <div class="route d-flex active">
+            <div class="route d-flex">
               <i class="fa-regular fa-message"></i>
               Bildiriş
             </div>
@@ -71,7 +74,7 @@
             </div>
           </a>
           <a href="discount-code.html">
-            <div class="route d-flex">
+            <div class="route d-flex active">
               <i class="fa-solid fa-square-binary"></i>
               Endirim kodu
             </div>
@@ -109,7 +112,7 @@
               <i class="fa-solid fa-gear"></i>
             </a>
           </div>
-          <div class="route d-flex active">
+          <div class="route d-flex">
             <a href="notification.html">
               <i class="fa-regular fa-message"></i>
             </a>
@@ -129,7 +132,7 @@
               <i class="fa-solid fa-file-lines"></i>
             </a>
           </div>
-          <div class="route d-flex">
+          <div class="route d-flex active">
             <a href="discount-code.html">
               <i class="fa-solid fa-square-binary"></i>
             </a>
@@ -176,40 +179,158 @@
     </section>
 
     <section id="slot">
-      <div class="upside-bg">
-        <div class="notification-send-relative">
-          <img src="images/notification-send-bg.png" alt="" />
+      <div class="discount-upside-bg">
+        <div class="discount-relative">
+          <img src="images/discount-bg.png" alt="" />
           <div>
-            <div class="notification-send-text-absolute">
-              <h1>İstifadəçiləri seçdiniz.</h1>
+            <div class="discount-absolute">
+              <div class="d-flex">
+                <div>
+                  <h1>Yeni Endirim<br />Kodu Yarat</h1>
+                </div>
+                <div class="absolute-button">
+                  <button>LALİSA</button>
+                </div>
+              </div>
               <p>
-                Siz artıq bildiriş göndərmək üçün istifadəçiləri uğurla
-                seçdiniz. İndi bu istifadəçilərə göndərmək istədiyiniz mesajı
-                yaza bilərsiniz. Mesajınızın dəqiq, aydın və cəlbedici olmasına
-                diqqət yetirin ki, qarşı tərəfdə daha yaxşı təsir yaratsın.
+                Müştəriləriniz üçün xüsusi endirimlər təklif etmək üçün yeni bir
+                kod yaradın. Endirim kodunu, məbləğini və etibarlılıq tarixini
+                təyin edin.
               </p>
+              <div class="submit-code d-flex gap-4">
+                <div>
+                  <input type="text" placeholder="Endirim kodunu daxil et" />
+                </div>
+                <div class="code-buttons d-flex gap-2">
+                  <button class="submit">Tətbiq et</button>
+                  <button class="infinity">Limitsiz</button>
+                </div>
+              </div>
             </div>
-            <div class="notification-send-animation-absolute">
-              <img src="images/notification-send-animation.png" alt="" />
+            <div class="discount-animation-absolute">
+              <img src="images/discount-animation.png" alt="" />
             </div>
           </div>
         </div>
       </div>
-      <div class="areainput">
-        <div class="areainput-title">
-          <h1>Bildiriş bölməsi</h1>
+      <div class="discount-code-table-upper">
+        <div class="title">Endirim Kodlarının İdarəsi</div>
+        <div class="date-filter d-flex-gap-3">
+          <div class="date-inputs d-flex gap-2">
+            <div>
+              <label for="start-date">Başlama tarixi</label>
+              <br />
+              <input type="date" />
+            </div>
+            <div>
+              <label for="end-date">Bitmə tarixi</label>
+              <br />
+              <input type="date" />
+            </div>
+          </div>
         </div>
-        <div class="area-main">
-          <textarea placeholder="Bildir..."></textarea>
-        </div>
-        <div class="area-button">
-          <button>Göndər</button>
-        </div>
+      </div>
+      <div class="discount-table">
+        <table>
+          <thead>
+            <tr>
+              <th>
+                <label class="custom-checkbox">
+                  <input type="checkbox" />
+                  <span class="checkmark">
+                    <i class="fa-solid fa-check"></i>
+                  </span>
+                </label>
+                Sıra
+              </th>
+              <th>Endirim kodu</th>
+              <th>İstifadə</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Example row -->
+            <tr>
+              <td>
+                <label class="custom-checkbox">
+                  <input type="checkbox" />
+                  <span class="checkmark">
+                    <i class="fa-solid fa-check"></i>
+                  </span>
+                </label>
+                01
+              </td>
+              <td>
+                <div class="user-info d-flex align-items-center">
+                  <span>NOYABR 2024</span>
+                </div>
+              </td>
+              <td>200</td>
+              <td><button class="toggle-status"></button></td>
+            </tr>
+            <tr>
+              <td>
+                <label class="custom-checkbox">
+                  <input type="checkbox" />
+                  <span class="checkmark">
+                    <i class="fa-solid fa-check"></i>
+                  </span>
+                </label>
+                01
+              </td>
+              <td>
+                <div class="user-info d-flex align-items-center">
+                  <span>NOYABR 2024</span>
+                </div>
+              </td>
+              <td>200</td>
+              <td><button class="toggle-status"></button></td>
+            </tr>
+            <tr>
+              <td>
+                <label class="custom-checkbox">
+                  <input type="checkbox" />
+                  <span class="checkmark">
+                    <i class="fa-solid fa-check"></i>
+                  </span>
+                </label>
+                01
+              </td>
+              <td>
+                <div class="user-info d-flex align-items-center">
+                  <span>NOYABR 2024</span>
+                </div>
+              </td>
+              <td>200</td>
+              <td><button class="toggle-status"></button></td>
+            </tr>
+            <tr>
+              <td>
+                <label class="custom-checkbox">
+                  <input type="checkbox" />
+                  <span class="checkmark">
+                    <i class="fa-solid fa-check"></i>
+                  </span>
+                </label>
+                01
+              </td>
+              <td>
+                <div class="user-info d-flex align-items-center">
+                  <span>NOYABR 2024</span>
+                </div>
+              </td>
+              <td>200</td>
+              <td><button class="toggle-status"></button></td>
+            </tr>
+
+            <!-- Add more rows as needed -->
+          </tbody>
+        </table>
       </div>
     </section>
 
-
     <script src="scripts/users.js"></script>
+    <script src="scripts/discount-code.js"></script>
     <script src="scripts/sidebarToggle.js"></script>
     <script src="scripts/main.js"></script>
   </body>
