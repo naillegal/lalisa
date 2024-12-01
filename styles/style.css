@@ -20,6 +20,7 @@
   left: 0;
   z-index: 100;
   overflow: auto;
+  scrollbar-width: thin;
 }
 #layout #sidebar img {
   width: 80%;
@@ -83,6 +84,7 @@
   left: 0;
   z-index: 100;
   overflow: auto;
+  scrollbar-width: thin;
 }
 #layout #responsive-sidebar img {
   width: 80%;
@@ -2131,4 +2133,445 @@
 }
 #slot .budget-visible .budget-cashback-table table .custom-checkbox input[type=checkbox]:checked + .checkmark i {
   color: #ffffff;
+}
+
+#slot .doctors-title {
+  padding: 10px;
+}
+#slot .doctors-title h2 {
+  color: rgb(17, 24, 39);
+  font-weight: 600;
+  font-size: 24px;
+}
+#slot .doctors-table {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border: 1px solid #e0e0e0;
+  width: 99%;
+}
+#slot .doctors-table .dp-none-first,
+#slot .doctors-table .dp-none-second {
+  display: none;
+}
+#slot .doctors-table table {
+  width: 100%;
+  border-collapse: collapse;
+  color: rgb(75, 85, 99);
+}
+#slot .doctors-table table thead {
+  background-color: rgb(232, 234, 237);
+}
+#slot .doctors-table table thead th {
+  padding: 30px 20px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+  color: rgb(17, 24, 39);
+  font-weight: 500;
+}
+#slot .doctors-table table thead th:last-child {
+  border-top-right-radius: 10px;
+}
+#slot .doctors-table table thead th:first-child {
+  border-top-left-radius: 10px;
+}
+#slot .doctors-table table tbody tr td {
+  padding: 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+#slot .doctors-table table tbody tr td .user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#slot .doctors-table table tbody tr td .user-info img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+#slot .doctors-table table tbody tr td .status-btns .doctor-edit-btn {
+  background-color: rgba(255, 176, 22, 0.2);
+  border: 1px solid rgba(255, 176, 22, 0.2);
+  border-radius: 2px;
+  color: rgb(253, 181, 42);
+  padding: 5px;
+  font-weight: 600;
+  margin-right: 5px;
+}
+#slot .doctors-table table tbody tr td .status-btns .doctor-permission-btn {
+  background-color: rgba(5, 193, 104, 0.2);
+  border: 1px solid rgba(5, 193, 104, 0.2);
+  border-radius: 2px;
+  color: rgb(20, 202, 116);
+  padding: 5px;
+  font-weight: 600;
+}
+#slot .doctors-table table tbody tr .doctor-permission p {
+  color: rgb(84, 186, 79);
+}
+#slot .doctors-table table tbody tr .doctor-permission i {
+  font-size: 50px;
+  margin-left: 12px;
+  color: rgb(255, 100, 101);
+}
+#slot .doctors-table table tbody tr:last-child td {
+  border-bottom: none;
+}
+#slot .doctors-table table .custom-checkbox {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+#slot .doctors-table table .custom-checkbox input[type=checkbox] {
+  display: none;
+}
+#slot .doctors-table table .custom-checkbox .checkmark {
+  width: 16px;
+  height: 16px;
+  border: 1px solid rgb(107, 114, 128);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+}
+#slot .doctors-table table .custom-checkbox .checkmark i {
+  font-size: 14px;
+  color: transparent;
+  transition: color 0.3s ease;
+}
+#slot .doctors-table table .custom-checkbox input[type=checkbox]:checked + .checkmark {
+  background-color: rgb(84, 186, 79);
+  border-color: rgb(84, 186, 79);
+}
+#slot .doctors-table table .custom-checkbox input[type=checkbox]:checked + .checkmark i {
+  color: #ffffff;
+}
+
+#overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 200;
+}
+
+#slot .treatment-title {
+  padding: 10px;
+}
+#slot .treatment-title h2 {
+  color: rgb(17, 24, 39);
+  font-weight: 600;
+  font-size: 24px;
+}
+#slot .treatment-process {
+  padding: 40px 0px;
+}
+#slot .treatment-process .treatment-process-upside,
+#slot .treatment-process .treatment-process-underside {
+  align-items: start;
+}
+#slot .treatment-process .treatment-process-upside .element-2,
+#slot .treatment-process .treatment-process-upside .element-3,
+#slot .treatment-process .treatment-process-upside .element-4,
+#slot .treatment-process .treatment-process-upside .element-5,
+#slot .treatment-process .treatment-process-upside .element-6,
+#slot .treatment-process .treatment-process-underside .element-2,
+#slot .treatment-process .treatment-process-underside .element-3,
+#slot .treatment-process .treatment-process-underside .element-4,
+#slot .treatment-process .treatment-process-underside .element-5,
+#slot .treatment-process .treatment-process-underside .element-6 {
+  visibility: hidden;
+}
+#slot .treatment-process .treatment-process-upside .create-treatment .treatment-box,
+#slot .treatment-process .treatment-process-underside .create-treatment .treatment-box {
+  cursor: pointer;
+  width: 280px;
+  padding: 5px 10px 10px 10px;
+  border: 1px solid rgb(84, 186, 79);
+  border-radius: 8px;
+  background-color: white;
+}
+@media (min-width: 1700px) {
+  #slot .treatment-process .treatment-process-upside .create-treatment .treatment-box,
+  #slot .treatment-process .treatment-process-underside .create-treatment .treatment-box {
+    width: 400px;
+  }
+}
+#slot .treatment-process .treatment-process-upside .create-treatment .treatment-box .treatment-content,
+#slot .treatment-process .treatment-process-underside .create-treatment .treatment-box .treatment-content {
+  text-align: center;
+}
+#slot .treatment-process .treatment-process-upside .create-treatment .treatment-box .treatment-content .title-input,
+#slot .treatment-process .treatment-process-underside .create-treatment .treatment-box .treatment-content .title-input {
+  pointer-events: none;
+  cursor: pointer;
+  padding: 5px 5px 10px 5px;
+  text-align: center;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  color: rgb(84, 186, 79);
+  font-weight: 500;
+  font-size: 20px;
+  overflow: hidden;
+}
+#slot .treatment-process .treatment-process-upside .create-treatment .treatment-box .treatment-content .title-input::-moz-placeholder, #slot .treatment-process .treatment-process-underside .create-treatment .treatment-box .treatment-content .title-input::-moz-placeholder {
+  color: rgb(84, 186, 79);
+  font-weight: 500;
+  font-size: 20px;
+}
+#slot .treatment-process .treatment-process-upside .create-treatment .treatment-box .treatment-content .title-input::placeholder,
+#slot .treatment-process .treatment-process-underside .create-treatment .treatment-box .treatment-content .title-input::placeholder {
+  color: rgb(84, 186, 79);
+  font-weight: 500;
+  font-size: 20px;
+}
+#slot .treatment-process .treatment-process-upside .create-treatment .treatment-box .treatment-content .description-input,
+#slot .treatment-process .treatment-process-underside .create-treatment .treatment-box .treatment-content .description-input {
+  pointer-events: none;
+  cursor: pointer;
+  padding: 20px 5px;
+  text-align: center;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  font-weight: 200;
+  color: rgb(0, 0, 0);
+  width: 100%;
+  scrollbar-width: thin;
+  overflow: hidden;
+}
+#slot .treatment-process .treatment-process-upside .create-treatment .treatment-box .treatment-content .description-input::-moz-placeholder, #slot .treatment-process .treatment-process-underside .create-treatment .treatment-box .treatment-content .description-input::-moz-placeholder {
+  font-weight: 200;
+  color: rgb(0, 0, 0);
+  font-size: 32px;
+}
+#slot .treatment-process .treatment-process-upside .create-treatment .treatment-box .treatment-content .description-input::placeholder,
+#slot .treatment-process .treatment-process-underside .create-treatment .treatment-box .treatment-content .description-input::placeholder {
+  font-weight: 200;
+  color: rgb(0, 0, 0);
+  font-size: 32px;
+}
+#slot .treatment-process .treatment-process-upside .create-treatment .broken-box,
+#slot .treatment-process .treatment-process-underside .create-treatment .broken-box {
+  display: flex;
+  align-items: center;
+}
+#slot .treatment-process .treatment-process-upside .create-treatment .broken-box .broken-line,
+#slot .treatment-process .treatment-process-underside .create-treatment .broken-box .broken-line {
+  padding: 0px 8px;
+}
+#slot .treatment-process .treatment-process-upside .create-treatment .broken-box .broken-line i,
+#slot .treatment-process .treatment-process-underside .create-treatment .broken-box .broken-line i {
+  font-size: 10px;
+}
+#slot .treatment-process .treatment-process-upside .create-treatment .broken-box .treatment-icon,
+#slot .treatment-process .treatment-process-underside .create-treatment .broken-box .treatment-icon {
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+#slot .treatment-process .treatment-process-upside .create-treatment .broken-box .treatment-icon i,
+#slot .treatment-process .treatment-process-underside .create-treatment .broken-box .treatment-icon i {
+  background-color: rgb(84, 186, 79);
+  padding: 5px 6px;
+  border-radius: 50%;
+  color: white;
+}
+#slot .treatment-process .treatment-process-upside .create-treatment .last-element-broken,
+#slot .treatment-process .treatment-process-underside .create-treatment .last-element-broken {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#slot .treatment-process .treatment-process-upside .create-treatment .last-element-broken .last-element-broken-line,
+#slot .treatment-process .treatment-process-underside .create-treatment .last-element-broken .last-element-broken-line {
+  padding-top: 15px;
+  writing-mode: vertical-rl;
+  text-align: center;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#slot .treatment-process .treatment-process-upside .create-treatment .last-element-broken .last-element-broken-line .last-element-arrow-icon,
+#slot .treatment-process .treatment-process-underside .create-treatment .last-element-broken .last-element-broken-line .last-element-arrow-icon {
+  font-size: 10px;
+  transform: rotate(90deg);
+  margin-right: 2px;
+}
+#slot .treatment-process .treatment-process-upside .create-treatment .last-element-broken .last-element-treatment-icon,
+#slot .treatment-process .treatment-process-underside .create-treatment .last-element-broken .last-element-treatment-icon {
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+#slot .treatment-process .treatment-process-upside .create-treatment .last-element-broken .last-element-treatment-icon .last-element-treatment-icon-i,
+#slot .treatment-process .treatment-process-underside .create-treatment .last-element-broken .last-element-treatment-icon .last-element-treatment-icon-i {
+  background-color: rgb(84, 186, 79);
+  padding: 5px 6px;
+  border-radius: 50%;
+  color: white;
+}
+#slot .treatment-process .treatment-process-underside {
+  padding: 20px 0px;
+}
+#slot .treatment-process .confirm-create-treatment {
+  padding: 30px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#slot .treatment-process .confirm-create-treatment button {
+  background-color: rgb(13, 110, 253);
+  border: 1px solid rgb(13, 110, 253);
+  border-radius: 8px;
+  padding: 8px 15px;
+  color: white;
+}
+#slot .treatment-process .created-treatments {
+  padding: 20px 0px;
+}
+#slot .treatment-process .created-treatments .created-treatments-title {
+  padding-bottom: 40px;
+  padding-left: 10px;
+}
+#slot .treatment-process .created-treatments .created-treatments-title h2 {
+  color: rgb(17, 24, 39);
+  font-weight: 600;
+  font-size: 24px;
+}
+#slot .treatment-process .treatment-content-popup {
+  display: none;
+  z-index: 300;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#slot .treatment-process .treatment-content-popup .treatment-content-popup-box {
+  cursor: pointer;
+  width: 280px;
+  padding: 5px 10px 10px 10px;
+  border: 1px solid rgb(84, 186, 79);
+  border-radius: 8px;
+  background-color: white;
+}
+@media (min-width: 1700px) {
+  #slot .treatment-process .treatment-content-popup .treatment-content-popup-box {
+    width: 400px;
+  }
+}
+#slot .treatment-process .treatment-content-popup .treatment-content-popup-box .treatment-content-popup-content {
+  text-align: center;
+}
+#slot .treatment-process .treatment-content-popup .treatment-content-popup-box .treatment-content-popup-content .treatment-content-popup-title-input {
+  cursor: pointer;
+  padding: 5px 5px 10px 5px;
+  text-align: center;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  color: rgb(84, 186, 79);
+  font-weight: 500;
+  font-size: 20px;
+}
+#slot .treatment-process .treatment-content-popup .treatment-content-popup-box .treatment-content-popup-content .treatment-content-popup-title-input::-moz-placeholder {
+  color: rgb(84, 186, 79);
+  font-weight: 500;
+  font-size: 20px;
+}
+#slot .treatment-process .treatment-content-popup .treatment-content-popup-box .treatment-content-popup-content .treatment-content-popup-title-input::placeholder {
+  color: rgb(84, 186, 79);
+  font-weight: 500;
+  font-size: 20px;
+}
+#slot .treatment-process .treatment-content-popup .treatment-content-popup-box .treatment-content-popup-content .treatment-content-popup-description-input {
+  cursor: pointer;
+  padding: 15px 5px;
+  text-align: center;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  font-weight: 200;
+  color: rgb(0, 0, 0);
+  width: 100%;
+  scrollbar-width: thin;
+}
+#slot .treatment-process .treatment-content-popup .treatment-content-popup-box .treatment-content-popup-content .treatment-content-popup-description-input::-moz-placeholder {
+  font-weight: 200;
+  color: rgb(0, 0, 0);
+  font-size: 32px;
+}
+#slot .treatment-process .treatment-content-popup .treatment-content-popup-box .treatment-content-popup-content .treatment-content-popup-description-input::placeholder {
+  font-weight: 200;
+  color: rgb(0, 0, 0);
+  font-size: 32px;
+}
+#slot .treatment-process .treatment-content-popup .treatment-content-popup-btns {
+  margin-top: 10px;
+}
+#slot .treatment-process .treatment-content-popup .treatment-content-popup-btns .treatment-content-popup-close {
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(220, 38, 38);
+  border-radius: 8px;
+  padding: 8px 15px;
+  color: rgb(220, 38, 38);
+}
+#slot .treatment-process .treatment-content-popup .treatment-content-popup-btns .treatment-content-popup-confirm {
+  background-color: rgb(13, 110, 253);
+  border: 1px solid rgb(13, 110, 253);
+  border-radius: 8px;
+  padding: 8px 15px;
+  color: white;
+}
+#slot .treatment-process .treatment-clock-popup {
+  display: none;
+  z-index: 300;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  width: 340px;
+  height: 385;
+  border-radius: 20px;
+  text-align: center;
+}
+#slot .treatment-process .treatment-clock-popup .treatment-clock-popup-middle .treatment-clock-popup-middle-time {
+  color: rgb(75, 85, 99);
+  border: 1px solid rgb(84, 186, 79);
+  border-radius: 5px;
+  width: 30%;
+  margin: auto;
+  padding: 10px;
+}
+#slot .treatment-process .treatment-clock-popup .treatment-clock-popup-middle .treatment-clock-popup-middle-time input {
+  outline: none;
+  background-color: transparent;
+  border: 0px;
+}
+#slot .treatment-process .treatment-clock-popup .treatment-clock-popup-btns {
+  margin-top: 10px;
+}
+#slot .treatment-process .treatment-clock-popup .treatment-clock-popup-btns .treatment-clock-popup-close {
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(220, 38, 38);
+  border-radius: 8px;
+  padding: 8px 15px;
+  color: rgb(220, 38, 38);
+}
+#slot .treatment-process .treatment-clock-popup .treatment-clock-popup-btns .treatment-clock-popup-confirm {
+  background-color: rgb(13, 110, 253);
+  border: 1px solid rgb(13, 110, 253);
+  border-radius: 8px;
+  padding: 8px 15px;
+  color: white;
 }/*# sourceMappingURL=style.css.map */

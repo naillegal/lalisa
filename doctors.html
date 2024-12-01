@@ -10,7 +10,10 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="stylesheet" href="vendors/bootstrap.min.css" />
     <title>Lalisa - Users</title>
@@ -47,7 +50,7 @@
             </div>
           </a>
           <a href="notification.html">
-            <div class="route d-flex active">
+            <div class="route d-flex">
               <i class="fa-regular fa-message"></i>
               Bildiriş
             </div>
@@ -77,7 +80,7 @@
             </div>
           </a>
           <a href="doctors.html">
-            <div class="route d-flex">
+            <div class="route d-flex active">
               <i class="fa-solid fa-heart-pulse"></i>
               Həkimlər
             </div>
@@ -109,7 +112,7 @@
               <i class="fa-solid fa-gear"></i>
             </a>
           </div>
-          <div class="route d-flex active">
+          <div class="route d-flex">
             <a href="notification.html">
               <i class="fa-regular fa-message"></i>
             </a>
@@ -134,8 +137,8 @@
               <i class="fa-solid fa-square-binary"></i>
             </a>
           </div>
-          <div class="route d-flex">
-            <a href="doctors.html">
+          <div class="route d-flex active">
+            <a href="#">
               <i class="fa-solid fa-heart-pulse"></i>
             </a>
           </div>
@@ -176,40 +179,124 @@
     </section>
 
     <section id="slot">
-      <div class="upside-bg">
-        <div class="notification-send-relative">
-          <img src="images/notification-send-bg.png" alt="" />
-          <div>
-            <div class="notification-send-text-absolute">
-              <h1>İstifadəçiləri seçdiniz.</h1>
-              <p>
-                Siz artıq bildiriş göndərmək üçün istifadəçiləri uğurla
-                seçdiniz. İndi bu istifadəçilərə göndərmək istədiyiniz mesajı
-                yaza bilərsiniz. Mesajınızın dəqiq, aydın və cəlbedici olmasına
-                diqqət yetirin ki, qarşı tərəfdə daha yaxşı təsir yaratsın.
-              </p>
-            </div>
-            <div class="notification-send-animation-absolute">
-              <img src="images/notification-send-animation.png" alt="" />
-            </div>
-          </div>
-        </div>
+      <div class="doctors-title">
+        <h2>Həkimlər</h2>
       </div>
-      <div class="areainput">
-        <div class="areainput-title">
-          <h1>Bildiriş bölməsi</h1>
-        </div>
-        <div class="area-main">
-          <textarea placeholder="Bildir..."></textarea>
-        </div>
-        <div class="area-button">
-          <button>Göndər</button>
-        </div>
+      <div class="doctors-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Sıra</th>
+              <th>Ad</th>
+              <th>Xidmətlər</th>
+              <th>İş saatları</th>
+              <th class="doctor-permission-time dp-none-first">İcazə vaxtı</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Example row -->
+            <tr>
+              <td>01</td>
+              <td>
+                <div class="user-info d-flex align-items-center">
+                  <img src="images/user-mini-pic.png" alt="User" />
+                  <span>Farid Mirzayev</span>
+                </div>
+              </td>
+              <td>
+                <p>Lazer epilyasiyası</p>
+                <p>Kosmetologiya</p>
+                <p>Arıqlama</p>
+              </td>
+              <td>
+                <div class="d-flex gap-3">
+                  <div class="week-days">
+                    <p>B.e</p>
+                    <p>Ç.a</p>
+                    <p>Ç</p>
+                    <p>C.a</p>
+                    <p>C</p>
+                    <p>Ş</p>
+                    <p>B</p>
+                  </div>
+                  <div class="hours-range">
+                    <p>10:00 - 12:00</p>
+                    <p>10:00 - 12:00</p>
+                    <p>10:00 - 12:00</p>
+                    <p>10:00 - 12:00</p>
+                    <p>10:00 - 12:00</p>
+                    <p>10:00 - 12:00</p>
+                    <p>10:00 - 12:00</p>
+                  </div>
+                </div>
+              </td>
+              <td class="doctor-permission dp-none-second">
+                <p class="doctor-permission-date">20.05.2012</p>
+                <p class="doctor-permission-hour">20:30 AM</p>
+              </td>
+              <td>
+                <div class="status-btns">
+                  <button class="doctor-edit-btn">Redaktə</button>
+                  <button class="doctor-permission-btn">İcazə</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>01</td>
+              <td>
+                <div class="user-info d-flex align-items-center">
+                  <img src="images/user-mini-pic.png" alt="User" />
+                  <span>Farid Mirzayev</span>
+                </div>
+              </td>
+              <td>
+                <p>Lazer epilyasiyası</p>
+                <p>Kosmetologiya</p>
+                <p>Arıqlama</p>
+              </td>
+              <td>
+                <div class="d-flex gap-3">
+                  <div class="week-days">
+                    <p>B.e</p>
+                    <p>Ç.a</p>
+                    <p>Ç</p>
+                    <p>C.a</p>
+                    <p>C</p>
+                    <p>Ş</p>
+                    <p>B</p>
+                  </div>
+                  <div class="hours-range">
+                    <p>10:00 - 12:00</p>
+                    <p>10:00 - 12:00</p>
+                    <p>10:00 - 12:00</p>
+                    <p>10:00 - 12:00</p>
+                    <p>10:00 - 12:00</p>
+                    <p>10:00 - 12:00</p>
+                    <p>10:00 - 12:00</p>
+                  </div>
+                </div>
+              </td>
+              <td class="doctor-permission dp-none-second">
+                <i class="fa-solid fa-circle-xmark"></i>
+              </td>
+              <td>
+                <div class="status-btns">
+                  <button class="doctor-edit-btn">Redaktə</button>
+                  <button class="doctor-permission-btn">İcazə</button>
+                </div>
+              </td>
+            </tr>
+            <!-- Add more rows as needed -->
+          </tbody>
+        </table>
       </div>
     </section>
 
-
+    <script src="scripts/doctor.js"></script>
+    <script src="scripts/cashback.js"></script>
     <script src="scripts/users.js"></script>
+    <script src="scripts/discount-code.js"></script>
     <script src="scripts/sidebarToggle.js"></script>
     <script src="scripts/main.js"></script>
   </body>
