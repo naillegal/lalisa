@@ -23,7 +23,7 @@
         <div class="sidebar-routes">
           <a href="statistics.html">
             <div class="route d-flex">
-              <i class="fa-solid fa-envelope"></i>
+              <i class="fa-solid fa-chart-simple"></i>
               Statiska
             </div>
           </a>
@@ -78,7 +78,7 @@
           <a href="doctors.html">
             <div class="route d-flex">
               <i class="fa-solid fa-heart-pulse"></i>
-             Həkimlər
+              Həkimlər
             </div>
           </a>
         </div>
@@ -90,7 +90,7 @@
         <div class="sidebar-routes">
           <div class="route d-flex">
             <a href="statistics.html">
-              <i class="fa-solid fa-envelope"></i>
+              <i class="fa-solid fa-chart-simple"></i>
             </a>
           </div>
           <div class="route d-flex active">
@@ -239,9 +239,9 @@
           <div class="header d-flex justify-content-between align-items-center">
             <div class="present-month" id="presentMonth">Noyabr 2024</div>
             <div class="view-options d-flex">
-              <div class="view-option">Gün</div>
-              <div class="view-option">Həftə</div>
-              <div class="view-option active">Ay</div>
+              <div class="view-option" id="dayViewButton">Gün</div>
+              <div class="view-option" id="weekViewButton">Həftə</div>
+              <div class="view-option active" id="monthViewButton">Ay</div>
             </div>
             <div class="d-flex rightside gap-2">
               <div class="arrows d-flex">
@@ -255,7 +255,34 @@
               <div class="today" id="todayButton">Bu Gün</div>
             </div>
           </div>
-          <div class="calendar" id="calendarTable">
+          <div class="calendar" id="calendarTable"></div>
+          <div class="week-view d-none" id="weekView">
+            <table>
+              <thead>
+                <tr>
+                  <th>Saat</th>
+                  <th>B.E</th>
+                  <th>Ç.A</th>
+                  <th>Ç</th>
+                  <th>C.A</th>
+                  <th>C.</th>
+                  <th>Ş.</th>
+                  <th>B.</th>
+                </tr>
+              </thead>
+              <tbody id="weekViewBody"></tbody>
+            </table>
+          </div>
+          <div class="day-view d-none" id="dayView">
+            <table>
+              <thead>
+                <tr>
+                  <th>Saat</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody id="dayViewBody"></tbody>
+            </table>
           </div>
         </div>
       </div>

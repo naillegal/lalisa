@@ -1,9 +1,22 @@
 document.addEventListener("DOMContentLoaded", () => {
+  let currentView = "month";
+  let currentDate = new Date();
+
   const calendarTable = document.getElementById("calendarTable");
   const presentMonth = document.getElementById("presentMonth");
   const todayButton = document.getElementById("todayButton");
   const prevArrow = document.querySelector(".prev-arrow");
   const nextArrow = document.querySelector(".next-arrow");
+
+  const weekView = document.getElementById("weekView");
+  const weekViewBody = document.getElementById("weekViewBody");
+
+  const dayView = document.getElementById("dayView");
+  const dayViewBody = document.getElementById("dayViewBody");
+
+  const dayViewButton = document.getElementById("dayViewButton");
+  const weekViewButton = document.getElementById("weekViewButton");
+  const monthViewButton = document.getElementById("monthViewButton");
 
   const monthNames = [
     "Yanvar",
@@ -20,17 +33,87 @@ document.addEventListener("DOMContentLoaded", () => {
     "Dekabr",
   ];
 
-  let currentDate = new Date();
+  const weekDayNames = ["B.E", "Ç.A", "Ç", "C.A", "C.", "Ş.", "B."];
 
-  // Tədbir məlumatları
-  const events = {
-    "2024-11-01": [{ name: "Həsən Hüs...", type: "event" }],
-    "2024-11-12": [{ name: "Həsən Hüs...", type: "group-event" }],
+  const monthEvents = {
+    "2024-12-01": [{ names: ["Həsən Hüseynov, Fərid Mirzəyev"] }],
+    "2024-12-12": [{ names: ["Fərid Mirzəyev, Həsən Hüseynov"] }],
   };
 
-  function renderCalendar(date) {
-    const year = date.getFullYear();
-    const month = date.getMonth();
+  const weekEvents = {
+    "2024-12-05": [
+      {
+        names: ["Həsən Hüseynov", "Pərviz Fətullayev", "Fərid Mirzəyev"],
+        time: "09:30",
+      },
+      {
+        names: ["Pərviz Fətullayev", "Əli Məmmədov"],
+        time: "11:00",
+      },
+    ],
+    "2024-12-08": [
+      {
+        names: ["Müəllim", "Şagirdlər"],
+        time: "16:30",
+      },
+    ],
+  };
+
+  const dayEvents = {
+    "2024-12-05": [
+      {
+        time: "09:30",
+        names: ["Həsən Hüseynov", "Pərviz Fətullayev", "Fərid Mirzəyev"],
+      },
+      {
+        time: "14:00",
+        names: ["Əli Məmmədov", "Leyla Qasımova"],
+      },
+    ],
+    "2024-12-06": [
+      {
+        time: "10:00",
+        names: ["Nərgiz Əliyeva", "Əli Məmmədov"],
+      },
+    ],
+  };
+
+  function getStartOfWeek(date) {
+    const day = date.getDay();
+    const diff = (day + 6) % 7;
+    const start = new Date(date);
+    start.setDate(date.getDate() - diff);
+    start.setHours(0, 0, 0, 0);
+    return start;
+  }
+
+  function formatWeekRange(startDate) {
+    const endDate = new Date(startDate);
+    endDate.setDate(startDate.getDate() + 6);
+
+    const startMonth = monthNames[startDate.getMonth()];
+    const endMonth = monthNames[endDate.getMonth()];
+    const startDay = startDate.getDate();
+    const endDay = endDate.getDate();
+    const year = startDate.getFullYear();
+
+    if (startMonth === endMonth) {
+      return `${startDay} - ${endDay} ${startMonth} ${year}`;
+    } else {
+      return `${startDay} ${startMonth} - ${endDay} ${endMonth} ${year}`;
+    }
+  }
+
+  function formatWeekDayHeader(date) {
+    const dayIndex = date.getDay() === 0 ? 6 : date.getDay() - 1;
+    const dayName = weekDayNames[dayIndex];
+    const dateStr = `${dayName} ${date.getDate()}/${date.getMonth() + 1}`;
+    return dateStr;
+  }
+
+  function renderCalendar() {
+    const year = currentDate.getFullYear();
+    const month = currentDate.getMonth();
     const firstDayOfMonth = new Date(year, month, 1).getDay();
     const daysInMonth = new Date(year, month + 1, 0).getDate();
     const daysInPrevMonth = new Date(year, month, 0).getDate();
@@ -38,77 +121,78 @@ document.addEventListener("DOMContentLoaded", () => {
     presentMonth.textContent = `${monthNames[month]} ${year}`;
     calendarTable.innerHTML = "";
 
-    // Cədvəl yaratma
     const table = document.createElement("table");
     const thead = document.createElement("thead");
     const tbody = document.createElement("tbody");
 
-    // Həftə günləri
     const weekRow = document.createElement("tr");
-    ["B.", "B.E", "Ç.A", "Ç", "C.A", "C.", "Ş."].forEach((day) => {
+    weekDayNames.forEach((day) => {
       const th = document.createElement("th");
       th.textContent = day;
       weekRow.appendChild(th);
     });
     thead.appendChild(weekRow);
 
-    // Günlər
-    let day = 1;
+    let dayCounter = 1;
     let nextMonthDay = 1;
+    let startingDay = firstDayOfMonth === 0 ? 6 : firstDayOfMonth - 1;
+
     for (let i = 0; i < 6; i++) {
       const row = document.createElement("tr");
 
       for (let j = 0; j < 7; j++) {
         const cell = document.createElement("td");
 
-        if (i === 0 && j < firstDayOfMonth) {
-          // Keçən ayın günləri
-          cell.textContent = daysInPrevMonth - (firstDayOfMonth - j - 1);
+        if (i === 0 && j < startingDay) {
+          cell.textContent = daysInPrevMonth - (startingDay - j - 1);
           cell.classList.add("prev-month");
-        } else if (day > daysInMonth) {
-          // Gələn ayın günləri
+        } else if (dayCounter > daysInMonth) {
           cell.textContent = nextMonthDay;
           nextMonthDay++;
           cell.classList.add("next-month");
         } else {
-          // Cari ayın günləri
           const fullDate = `${year}-${String(month + 1).padStart(
             2,
             "0"
-          )}-${String(day).padStart(2, "0")}`;
-          cell.textContent = day;
+          )}-${String(dayCounter).padStart(2, "0")}`;
+          cell.textContent = dayCounter;
 
-          // Tədbirlər əlavə etmək
-          if (events[fullDate]) {
-            events[fullDate].forEach((event) => {
+          if (monthEvents[fullDate]) {
+            monthEvents[fullDate].forEach((event) => {
               const eventBox = document.createElement("div");
-              if (event.type === "group-event") {
-                cell.classList.add("group-event");
-                eventBox.classList.add("group-event-box");
-              } else {
-                cell.classList.add("event");
-                eventBox.classList.add("event-box");
+              eventBox.classList.add("month-event-box");
+              const namesArray = event.names.flatMap((name) =>
+                name.split(",").map((n) => n.trim())
+              );
+              let displayName = namesArray[0];
+              if (namesArray.length > 1) {
+                const firstName = namesArray[0].split(" ")[0];
+                displayName = `${firstName}..`;
               }
-              eventBox.innerHTML = `
-                  <div class="name">${event.name}</div>
-                  ${
-                    event.type === "group-event"
-                      ? '<i class="fa-solid fa-users"></i>'
-                      : ""
-                  }
-                `;
+              eventBox.innerHTML = `<div class="name">${displayName}</div><i class="fa-solid fa-users"></i>`;
               cell.appendChild(eventBox);
             });
           }
 
+          const today = new Date();
           if (
-            day === currentDate.getDate() &&
-            month === new Date().getMonth() &&
-            year === new Date().getFullYear()
+            dayCounter === today.getDate() &&
+            month === today.getMonth() &&
+            year === today.getFullYear()
           ) {
             cell.classList.add("today-color");
           }
-          day++;
+
+          cell.addEventListener("click", () => {
+            currentDate = new Date(year, month, dayCounter);
+            if (currentView === "day") {
+              renderDayView();
+            } else if (currentView === "week") {
+              renderWeekView();
+            }
+          });
+
+          dayCounter++;
         }
 
         row.appendChild(cell);
@@ -120,22 +204,273 @@ document.addEventListener("DOMContentLoaded", () => {
     table.appendChild(thead);
     table.appendChild(tbody);
     calendarTable.appendChild(table);
+
+    weekView.classList.add("d-none");
+    dayView.classList.add("d-none");
+    calendarTable.classList.remove("d-none");
+  }
+
+  function renderWeekView() {
+    weekView.classList.remove("d-none");
+    calendarTable.classList.add("d-none");
+    dayView.classList.add("d-none");
+
+    weekViewBody.innerHTML = "";
+
+    const startOfWeek = getStartOfWeek(currentDate);
+    presentMonth.textContent = formatWeekRange(startOfWeek);
+
+    const datesInWeek = [];
+    for (let i = 0; i < 7; i++) {
+      const date = new Date(startOfWeek);
+      date.setDate(startOfWeek.getDate() + i);
+      datesInWeek.push(date);
+    }
+
+    const weekViewHeader = weekView.querySelector("thead tr");
+    if (weekViewHeader) {
+      const headerCells = weekViewHeader.querySelectorAll("th");
+      datesInWeek.forEach((date, index) => {
+        const headerCell = headerCells[index + 1];
+        if (headerCell) {
+          headerCell.textContent = formatWeekDayHeader(date);
+          const today = new Date();
+          if (
+            date.getDate() === today.getDate() &&
+            date.getMonth() === today.getMonth() &&
+            date.getFullYear() === today.getFullYear()
+          ) {
+            headerCell.classList.add("current-date");
+          } else {
+            headerCell.classList.remove("current-date");
+          }
+        }
+      });
+    } else {
+      const thead = document.createElement("thead");
+      const headerRow = document.createElement("tr");
+      const timeHeader = document.createElement("th");
+      timeHeader.textContent = "Saat";
+      headerRow.appendChild(timeHeader);
+      datesInWeek.forEach((date) => {
+        const th = document.createElement("th");
+        th.textContent = formatWeekDayHeader(date);
+        const today = new Date();
+        if (
+          date.getDate() === today.getDate() &&
+          date.getMonth() === today.getMonth() &&
+          date.getFullYear() === today.getFullYear()
+        ) {
+          th.classList.add("current-date");
+        }
+        headerRow.appendChild(th);
+      });
+      thead.appendChild(headerRow);
+      weekView.appendChild(thead);
+    }
+
+    const currentHour = new Date().getHours();
+
+    for (let hour = 0; hour < 24; hour++) {
+      const row = document.createElement("tr");
+
+      const timeCell = document.createElement("td");
+      timeCell.textContent = `${String(hour).padStart(2, "0")}:00`;
+      timeCell.classList.add("time-cell");
+      if (hour === currentHour) {
+        timeCell.classList.add("current-hour");
+      }
+      row.appendChild(timeCell);
+
+      datesInWeek.forEach((date) => {
+        const cell = document.createElement("td");
+        const fullDate = `${date.getFullYear()}-${String(
+          date.getMonth() + 1
+        ).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
+
+        if (weekEvents[fullDate]) {
+          weekEvents[fullDate].forEach((event) => {
+            const eventHour = parseInt(event.time.split(":")[0], 10);
+            if (eventHour === hour) {
+              const eventDiv = document.createElement("div");
+              eventDiv.classList.add("event");
+
+              const timeDiv = document.createElement("div");
+              timeDiv.classList.add("event-time");
+              timeDiv.textContent = event.time;
+              eventDiv.appendChild(timeDiv);
+
+              event.names.forEach((name) => {
+                const nameDiv = document.createElement("div");
+                nameDiv.classList.add("event-name");
+                nameDiv.textContent = name;
+                eventDiv.appendChild(nameDiv);
+              });
+
+              cell.appendChild(eventDiv);
+            }
+          });
+        }
+
+        row.appendChild(cell);
+      });
+
+      weekViewBody.appendChild(row);
+    }
+  }
+
+  function renderDayView() {
+    dayViewBody.innerHTML = "";
+
+    presentMonth.textContent = `${currentDate.getDate()} ${
+      monthNames[currentDate.getMonth()]
+    } ${currentDate.getFullYear()}`;
+
+    const now = new Date();
+    const currentHour = now.getHours();
+
+    for (let hour = 0; hour < 24; hour++) {
+      const row = document.createElement("tr");
+
+      const timeCell = document.createElement("td");
+      timeCell.textContent = `${String(hour).padStart(2, "0")}:00`;
+      timeCell.classList.add("time-cell");
+      if (hour === currentHour) {
+        timeCell.classList.add("current-hour");
+      }
+      row.appendChild(timeCell);
+
+      const eventCell = document.createElement("td");
+      eventCell.classList.add("event-cell");
+
+      const fullDate = `${currentDate.getFullYear()}-${String(
+        currentDate.getMonth() + 1
+      ).padStart(2, "0")}-${String(currentDate.getDate()).padStart(2, "0")}`;
+
+      if (dayEvents[fullDate]) {
+        dayEvents[fullDate].forEach((event) => {
+          const eventHour = parseInt(event.time.split(":")[0], 10);
+          if (eventHour === hour) {
+            const eventDiv = document.createElement("div");
+            eventDiv.classList.add("event");
+
+            const timeDiv = document.createElement("div");
+            timeDiv.textContent = event.time;
+            timeDiv.classList.add("event-time");
+            eventDiv.appendChild(timeDiv);
+
+            event.names.forEach((name) => {
+              const nameElement = document.createElement("div");
+              nameElement.textContent = name;
+              nameElement.classList.add("event-name");
+              eventDiv.appendChild(nameElement);
+            });
+
+            eventCell.appendChild(eventDiv);
+          }
+        });
+      }
+
+      row.appendChild(eventCell);
+      dayViewBody.appendChild(row);
+    }
   }
 
   function changeMonth(offset) {
     currentDate.setMonth(currentDate.getMonth() + offset);
-    renderCalendar(currentDate);
+    renderCalendar();
+  }
+
+  function changeWeek(offset) {
+    currentDate.setDate(currentDate.getDate() + 7 * offset);
+    renderWeekView();
+  }
+
+  function changeDay(offset) {
+    currentDate.setDate(currentDate.getDate() + offset);
+    renderDayView();
   }
 
   function goToToday() {
     currentDate = new Date();
-    renderCalendar(currentDate);
+    renderView();
   }
 
-  prevArrow.addEventListener("click", () => changeMonth(-1));
-  nextArrow.addEventListener("click", () => changeMonth(1));
-  todayButton.addEventListener("click", goToToday);
+  function renderView() {
+    if (currentView === "month") {
+      renderCalendar();
+    } else if (currentView === "week") {
+      renderWeekView();
+    } else if (currentView === "day") {
+      renderDayView();
+    }
+  }
 
-  // İlk render
-  renderCalendar(currentDate);
+  prevArrow.addEventListener("click", () => {
+    if (currentView === "month") {
+      changeMonth(-1);
+    } else if (currentView === "week") {
+      changeWeek(-1);
+    } else if (currentView === "day") {
+      changeDay(-1);
+    }
+  });
+
+  nextArrow.addEventListener("click", () => {
+    if (currentView === "month") {
+      changeMonth(1);
+    } else if (currentView === "week") {
+      changeWeek(1);
+    } else if (currentView === "day") {
+      changeDay(1);
+    }
+  });
+
+  todayButton.addEventListener("click", () => {
+    goToToday();
+  });
+
+  dayViewButton.addEventListener("click", () => {
+    if (currentView !== "day") {
+      currentView = "day";
+      renderDayView();
+      document
+        .querySelectorAll(".view-option")
+        .forEach((el) => el.classList.remove("active"));
+      dayViewButton.classList.add("active");
+      weekView.classList.add("d-none");
+      calendarTable.classList.add("d-none");
+      dayView.classList.remove("d-none");
+    }
+  });
+
+  weekViewButton.addEventListener("click", () => {
+    if (currentView !== "week") {
+      currentView = "week";
+      renderWeekView();
+      document
+        .querySelectorAll(".view-option")
+        .forEach((el) => el.classList.remove("active"));
+      weekViewButton.classList.add("active");
+      calendarTable.classList.add("d-none");
+      dayView.classList.add("d-none");
+      weekView.classList.remove("d-none");
+    }
+  });
+
+  monthViewButton.addEventListener("click", () => {
+    if (currentView !== "month") {
+      currentView = "month";
+      renderCalendar();
+      document
+        .querySelectorAll(".view-option")
+        .forEach((el) => el.classList.remove("active"));
+      monthViewButton.classList.add("active");
+      weekView.classList.add("d-none");
+      dayView.classList.add("d-none");
+      calendarTable.classList.remove("d-none");
+    }
+  });
+
+  renderCalendar();
 });

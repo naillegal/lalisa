@@ -551,7 +551,7 @@
   background: rgb(232, 234, 237);
 }
 #slot .curr-and-cal .currency-container .currencies .currency:last-child:after {
-  display: none; /* Remove the line for the last item */
+  display: none;
 }
 #slot .curr-and-cal .calendar-container {
   width: 79%;
@@ -666,33 +666,7 @@
   width: 14.2857%;
   height: 100px;
 }
-#slot .curr-and-cal .calendar-container .calendar table tbody .event .event-box {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 90%;
-  margin: auto;
-  cursor: pointer;
-  margin: 15px auto;
-  background-color: rgb(228, 241, 255);
-  height: 30px;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px;
-}
-#slot .curr-and-cal .calendar-container .calendar table tbody .event .event-box .name {
-  color: rgb(72, 127, 255);
-  font-weight: 400;
-}
-#slot .curr-and-cal .calendar-container .calendar table tbody .event .event-box i {
-  margin-top: 5px;
-  font-size: 10px;
-  color: white;
-  background-color: rgb(84, 186, 79);
-  padding: 5px;
-  border-radius: 50%;
-}
-#slot .curr-and-cal .calendar-container .calendar table tbody .group-event .group-event-box {
+#slot .curr-and-cal .calendar-container .calendar table tbody .month-event-box {
   cursor: pointer;
   background-color: rgb(228, 241, 255);
   width: 90%;
@@ -702,17 +676,136 @@
   border-radius: 6px;
   padding: 5px;
 }
-#slot .curr-and-cal .calendar-container .calendar table tbody .group-event .group-event-box .name {
+#slot .curr-and-cal .calendar-container .calendar table tbody .month-event-box .name {
   color: rgb(72, 127, 255);
   font-weight: 400;
 }
-#slot .curr-and-cal .calendar-container .calendar table tbody .group-event .group-event-box i {
+#slot .curr-and-cal .calendar-container .calendar table tbody .month-event-box i {
   margin-top: 5px;
   font-size: 11px;
   color: white;
   background-color: rgb(84, 186, 79);
   padding: 7px;
   border-radius: 50%;
+}
+#slot .curr-and-cal .calendar-container .week-view table {
+  width: 100%;
+  border-collapse: collapse;
+}
+#slot .curr-and-cal .calendar-container .week-view table thead th {
+  background-color: rgb(245, 246, 250);
+  text-align: center;
+  padding: 10px;
+  width: 100px;
+  border: 1px solid #e5e7eb;
+  color: rgb(17, 24, 39);
+  font-weight: 300;
+}
+#slot .curr-and-cal .calendar-container .week-view table tbody td {
+  border: 1px solid #e5e7eb;
+  height: 40px;
+  position: relative;
+  width: 400px;
+}
+#slot .curr-and-cal .calendar-container .week-view table .time-cell {
+  text-align: center;
+  width: 80px;
+  background-color: rgb(245, 246, 250);
+  color: rgb(17, 24, 39);
+  font-weight: 300;
+}
+#slot .curr-and-cal .calendar-container .week-view table .event {
+  border-radius: 6px;
+  background-color: rgb(254, 233, 233);
+  color: rgb(220, 38, 38);
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 95%;
+  margin: 5px auto;
+}
+#slot .curr-and-cal .calendar-container .week-view table .event-time {
+  color: #ffffff;
+  background-color: rgb(84, 186, 79);
+  padding: 0px 5px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  display: inline-block;
+  margin-bottom: 10px;
+  width: 100%;
+}
+#slot .curr-and-cal .calendar-container .week-view table .event-name {
+  color: rgb(220, 38, 38);
+  padding: 2px 15px;
+}
+#slot .curr-and-cal .calendar-container .week-view table .event-name:last-child {
+  margin-bottom: 15px;
+}
+#slot .curr-and-cal .calendar-container .week-view table th.current-date {
+  color: red;
+}
+#slot .curr-and-cal .calendar-container .week-view table .current-hour {
+  color: red;
+}
+#slot .curr-and-cal .calendar-container .day-view table {
+  width: 100%;
+  border-collapse: collapse;
+}
+#slot .curr-and-cal .calendar-container .day-view table thead th {
+  background-color: rgb(245, 246, 250);
+  text-align: center;
+  padding: 10px;
+  width: 100px;
+  border: 1px solid #e5e7eb;
+  color: rgb(17, 24, 39);
+  font-weight: 300;
+}
+#slot .curr-and-cal .calendar-container .day-view table tbody td {
+  border: 1px solid #e5e7eb;
+  height: 40px;
+  position: relative;
+  width: 100%;
+}
+#slot .curr-and-cal .calendar-container .day-view table .time-cell {
+  text-align: center;
+  width: 80px;
+  background-color: rgb(245, 246, 250);
+  color: rgb(17, 24, 39);
+  font-weight: 300;
+}
+#slot .curr-and-cal .calendar-container .day-view table .event {
+  border-radius: 6px;
+  background-color: rgb(254, 233, 233);
+  color: rgb(220, 38, 38);
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 95%;
+  margin: 5px auto;
+}
+#slot .curr-and-cal .calendar-container .day-view table .event-time {
+  color: #ffffff;
+  background-color: rgb(84, 186, 79);
+  padding: 0px 5px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  display: inline-block;
+  margin-bottom: 10px;
+  width: 100%;
+}
+#slot .curr-and-cal .calendar-container .day-view table .event-name {
+  color: rgb(220, 38, 38);
+  padding: 2px 15px;
+}
+#slot .curr-and-cal .calendar-container .day-view table .event-name:last-child {
+  margin-bottom: 15px;
+}
+#slot .curr-and-cal .calendar-container .day-view table .current-hour {
+  color: red;
 }
 
 #slot .users-bg {
