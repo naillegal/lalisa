@@ -54,3 +54,27 @@ toggleArrow.addEventListener('click', () => {
   // Vəziyyəti yadda saxlayırıq
   localStorage.setItem('isSidebarClosed', 'false');
 });
+
+
+// navbar user chevron dropdown menu toggle 
+document.addEventListener("DOMContentLoaded", function () {
+  const dropdownToggle = document.querySelector(".user-dropdown-menu-main .fa-chevron-down");
+  const dropdownMenu = document.querySelector(".user-dropdown-menu");
+
+  dropdownToggle.addEventListener("click", function () {
+    // Dropdown açılıbsa bağlanır, bağlıdırsa açılır
+    if (dropdownMenu.classList.contains("show")) {
+      dropdownMenu.classList.remove("show");
+    } else {
+      dropdownMenu.classList.add("show");
+    }
+  });
+
+  // Səhifədə başqa bir yerə klik edilərsə, menyunu bağla
+  document.addEventListener("click", function (event) {
+    if (!dropdownToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
+      dropdownMenu.classList.remove("show");
+    }
+  });
+});
+  

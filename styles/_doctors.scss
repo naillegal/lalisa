@@ -109,7 +109,7 @@
 
           i {
             font-size: 14px;
-            color: transparent; // Default olaraq quş ikonunu gizlədir
+            color: transparent;
             transition: color 0.3s ease;
           }
         }
@@ -119,10 +119,96 @@
           border-color: rgba(84, 186, 79, 1);
 
           i {
-            color: #ffffff; // Quş ikonunu ağ rəngdə göstərir
+            color: #ffffff; 
           }
         }
       }
     }
+
+    .doctor-permission-popup {
+      display: none;
+      z-index: 300;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      width: 340px;
+      height: 385;
+      border-radius: 20px;
+      text-align: center;
+      .doctor-permission-popup-img {
+        .relative-img{
+          position: relative;
+          top: 0;
+          left: 0;
+          img{
+            width: 100%;
+          }
+        }
+        .absolute-img{
+          position: absolute;
+          top: 70%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+      .doctor-permission-popup-middle {
+        padding-top: 30px;
+        .doctor-permission-popup-middle-time,
+        .doctor-permission-popup-middle-date {
+          color: rgba(75, 85, 99, 1);
+          border: 1px solid rgba(84, 186, 79, 1);
+          border-radius: 5px;
+          width: 100%;
+          margin: auto;
+          padding: 10px;
+          input {
+            outline: none;
+            background-color: transparent;
+            border: 0px;
+            width: 100%;
+          }
+        }
+        h2{
+          padding: 10px 0px;
+        }
+        .user-mini-pic{
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+        h6{
+          color: rgba(75, 85, 99, 1);
+          font-size: 20px;
+          font-weight: 400;
+          margin-top: 7px;
+        }
+      }
+      label{
+        font-weight: 600;
+        font-size: 18px;
+      }
+
+      .doctor-permission-popup-btns {
+        margin-top: 10px;
+        .doctor-permission-popup-close {
+          background-color: rgba(255, 255, 255, 1);
+          border: 1px solid rgba(220, 38, 38, 1);
+          border-radius: 8px;
+          padding: 8px 15px;
+          color: rgba(220, 38, 38, 1);
+        }
+        .doctor-permission-popup-confirm {
+          background-color: rgba(13, 110, 253, 1);
+          border: 1px solid rgba(13, 110, 253, 1);
+          border-radius: 8px;
+          padding: 8px 15px;
+          color: white;
+        }
+        padding-bottom: 20px;
+      }
+    }
+
   }
 }

@@ -166,7 +166,17 @@
               </div>
               <div class="d-flex align-items-center">
                 <div class="username">Farid Mirzayev</div>
-                <div><i class="fa-solid fa-chevron-down"></i></div>
+                <div class="user-dropdown-menu-main">
+                  <i class="fa-solid fa-chevron-down"></i>
+                  <div class="user-dropdown-menu">
+                    <button class="d-flex gap-2">
+                      <i class="fa-solid fa-gear"></i>Tənzimləmələr
+                    </button>
+                    <button class="d-flex gap-2">
+                      <i class="fa-solid fa-right-from-bracket"></i><a href="index.html">Çıxış</a>
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -180,55 +190,137 @@
       </div>
 
       <div class="d-flex gap-1 curr-and-cal">
-        <div class="currency-container">
-          <div class="currency-button-box">
-            <button>
-              <i class="fa-regular fa-square-plus"></i> Add Currency
-            </button>
+        <div class="event-container">
+          <div class="event-button-box">
+            <button><i class="fa-regular fa-square-plus"></i> Add Event</button>
           </div>
 
-          <div class="currencies">
-            <div class="currency">
+          <div class="events">
+            <div class="event">
               <div class="status-indicator orange"></div>
-              <div class="currency-details">
+              <div class="event-details">
                 <div class="d-flex justify-content-between align-items-center">
                   <div>
                     <p class="date">Cümə 1 Noyabr</p>
                     <p class="time">10:30am - 5:30pm</p>
                     <p class="name">Farid Mirzayev</p>
                   </div>
-                  <div>
+                  <div class="ellipsis-relative">
                     <i class="fa-solid fa-ellipsis-vertical"></i>
+                    <div class="ellipsis-drop-down">
+                      <button class="d-flex gap-2">
+                        <i class="fa-solid fa-eye"></i>View
+                      </button>
+                      <button class="d-flex gap-2">
+                        <i class="fa-regular fa-pen-to-square"></i>Edit
+                      </button>
+                      <button class="d-flex gap-2">
+                        <i class="fa-regular fa-trash-can"></i>Delete
+                      </button>
+                    </div>
+                    <div class="ellipsis-delete-popup">
+                      <div class="ellipsis-popup-img">
+                        <i class="fa-regular fa-trash-can"></i>
+                      </div>
+                      <div class="ellipsis-popup-middle">
+                        <h5>Are your sure you want to delete this event</h5>
+                      </div>
+
+                      <div
+                        class="ellipsis-popup-btns d-flex justify-content-center gap-5"
+                      >
+                        <button class="ellipsis-popup-close">Çıxış</button>
+                        <button class="ellipsis-popup-confirm">
+                          Təsdiq et
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="currency">
+            <div class="event">
               <div class="status-indicator green"></div>
-              <div class="currency-details">
+              <div class="event-details">
                 <div class="d-flex justify-content-between align-items-center">
                   <div>
                     <p class="date">Cümə 1 Noyabr</p>
                     <p class="time">10:30am - 5:30pm</p>
                     <p class="name">Farid Mirzayev</p>
                   </div>
-                  <div>
+                  <div class="ellipsis-relative">
                     <i class="fa-solid fa-ellipsis-vertical"></i>
+                    <div class="ellipsis-drop-down">
+                      <button class="d-flex gap-2">
+                        <i class="fa-solid fa-eye"></i>View
+                      </button>
+                      <button class="d-flex gap-2">
+                        <i class="fa-regular fa-pen-to-square"></i>Edit
+                      </button>
+                      <button class="d-flex gap-2">
+                        <i class="fa-regular fa-trash-can"></i>Delete
+                      </button>
+                    </div>
+                    <div class="ellipsis-delete-popup">
+                      <div class="ellipsis-popup-img">
+                        <i class="fa-regular fa-trash-can"></i>
+                      </div>
+                      <div class="ellipsis-popup-middle">
+                        <h5>Are your sure you want to delete this event</h5>
+                      </div>
+
+                      <div
+                        class="ellipsis-popup-btns d-flex justify-content-center gap-5"
+                      >
+                        <button class="ellipsis-popup-close">Çıxış</button>
+                        <button class="ellipsis-popup-confirm">
+                          Təsdiq et
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="currency">
+            <div class="event">
               <div class="status-indicator blue"></div>
-              <div class="currency-details">
+              <div class="event-details">
                 <div class="d-flex justify-content-between align-items-center">
                   <div>
                     <p class="date">Cümə 1 Noyabr</p>
                     <p class="time">10:30am - 5:30pm</p>
                     <p class="name">Farid Mirzayev</p>
                   </div>
-                  <div>
+                  <div class="ellipsis-relative">
                     <i class="fa-solid fa-ellipsis-vertical"></i>
+                    <div class="ellipsis-drop-down">
+                      <button class="d-flex gap-2">
+                        <i class="fa-solid fa-eye"></i>View
+                      </button>
+                      <button class="d-flex gap-2">
+                        <i class="fa-regular fa-pen-to-square"></i>Edit
+                      </button>
+                      <button class="d-flex gap-2">
+                        <i class="fa-regular fa-trash-can"></i>Delete
+                      </button>
+                    </div>
+                    <div class="ellipsis-delete-popup">
+                      <div class="ellipsis-popup-img">
+                        <i class="fa-regular fa-trash-can"></i>
+                      </div>
+                      <div class="ellipsis-popup-middle">
+                        <h5>Are your sure you want to delete this event</h5>
+                      </div>
+
+                      <div
+                        class="ellipsis-popup-btns d-flex justify-content-center gap-5"
+                      >
+                        <button class="ellipsis-popup-close">Çıxış</button>
+                        <button class="ellipsis-popup-confirm">
+                          Təsdiq et
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -285,8 +377,98 @@
             </table>
           </div>
         </div>
+        <div class="calendar-event-popup">
+          <div class="upside d-flex justify-content-between">
+            <div>
+              <h4>Add New Event</h4>
+            </div>
+            <div>
+              <i class="fa-solid fa-xmark"></i>
+            </div>
+          </div>
+          <hr />
+          <div class="calendar-event-popup-middle">
+            <div class="form-group d-flex gap-2">
+              <label for="event-title-input">Participants :</label>
+              <input type="text" placeholder="Enter Event Title" />
+            </div>
+            <div class="form-group d-flex justify-content-center">
+              <div>
+                <label for="event-start-date-input">Start Date</label>
+                <input type="date" />
+              </div>
+              <div>
+                <label for="event-end-date-input">End Date</label>
+                <input type="date" />
+              </div>
+            </div>
+            <div class="form-group d-flex justify-content-center">
+              <div>
+                <label for="event-start-time-input">Start Time</label>
+                <input type="time" />
+              </div>
+              <div>
+                <label for="event-end-time-input">End Time</label>
+                <input type="time" />
+              </div>
+            </div>
+            <div>
+              <label for="theme-points">Theme</label>
+              <br />
+              <div class="d-flex justify-content-center gap-3">
+                <div>
+                  <input type="checkbox" />
+                  <label for="personal"
+                    ><div class="green-circle"></div>
+                    Personal</label
+                  >
+                </div>
+                <div>
+                  <input type="checkbox" />
+                  <label for="business"
+                    ><div class="blue-circle"></div>
+                    Business</label
+                  >
+                </div>
+                <div>
+                  <input type="checkbox" />
+                  <label for="family"
+                    ><div class="orange-circle"></div>
+                    Family</label
+                  >
+                </div>
+                <div>
+                  <input type="checkbox" />
+                  <label for="important"
+                    ><div class="purple-circle"></div>
+                    Important</label
+                  >
+                </div>
+                <div>
+                  <input type="checkbox" />
+                  <label for="holiday"
+                    ><div class="red-circle"></div>
+                    Holiday</label
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="description-box">
+              <label for="description">Description</label>
+              <br />
+              <textarea name="description" id="description" rows="3"></textarea>
+            </div>
+            <div
+              class="calendar-event-popup-middle-action-btns d-flex justify-content-center gap-3"
+            >
+              <button class="treatment-content-popup-close">Cancel</button>
+              <button class="treatment-content-popup-confirm">Save</button>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
+    <div id="overlay"></div>
 
     <script src="scripts/sidebarToggle.js"></script>
     <script src="scripts/calendar.js"></script>

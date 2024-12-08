@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   let currentView = "month";
   let currentDate = new Date();
+  let popupMode = ""; // "add", "edit", "view"
 
   const calendarTable = document.getElementById("calendarTable");
   const presentMonth = document.getElementById("presentMonth");
@@ -78,6 +79,244 @@ document.addEventListener("DOMContentLoaded", () => {
     ],
   };
 
+  // Popup Elements
+  const calendarEventPopup = document.querySelector(".calendar-event-popup");
+  const popupHeader = calendarEventPopup.querySelector("h4");
+  const popupCloseIcon = calendarEventPopup.querySelector(".fa-xmark");
+  const popupCancelButton = calendarEventPopup.querySelector(".treatment-content-popup-close");
+  const popupSaveButton = calendarEventPopup.querySelector(".treatment-content-popup-confirm");
+  const overlay = document.getElementById("overlay");
+
+  // Delete Popup Elements
+  const deletePopup = document.querySelector(".ellipsis-delete-popup");
+  const deleteCloseButton = deletePopup.querySelector(".ellipsis-popup-close");
+  const deleteConfirmButton = deletePopup.querySelector(".ellipsis-popup-confirm");
+  const deletePopupCloseIcon = deletePopup.querySelector(".fa-trash-can"); // Assuming there's an icon to close
+
+  // Function to open popup
+  function openPopup(mode, eventData = null) {
+    popupMode = mode;
+    popupHeader.textContent =
+      mode === "add"
+        ? "Add New Event"
+        : mode === "edit"
+        ? "Edit Event"
+        : "View Event";
+
+    // Enable or disable inputs based on mode
+    const inputs = calendarEventPopup.querySelectorAll("input, textarea, checkbox");
+    if (mode === "view") {
+      inputs.forEach((input) => {
+        input.disabled = true;
+      });
+    } else {
+      inputs.forEach((input) => {
+        input.disabled = false;
+      });
+    }
+
+    // If editing or viewing, populate the form with event data
+    if ((mode === "edit" || mode === "view") && eventData) {
+      // Assuming eventData contains the necessary fields
+      // Example:
+      // eventData = {
+      //   participants: "John Doe",
+      //   startDate: "2024-12-01",
+      //   endDate: "2024-12-01",
+      //   startTime: "10:00",
+      //   endTime: "12:00",
+      //   theme: "green",
+      //   description: "Meeting description"
+      // };
+      calendarEventPopup.querySelector('input[type="text"]').value = eventData.participants || "";
+      calendarEventPopup.querySelector('input[type="date"]:first-of-type').value = eventData.startDate || "";
+      calendarEventPopup.querySelector('input[type="date"]:last-of-type').value = eventData.endDate || "";
+      calendarEventPopup.querySelector('input[type="time"]:first-of-type').value = eventData.startTime || "";
+      calendarEventPopup.querySelector('input[type="time"]:last-of-type').value = eventData.endTime || "";
+      calendarEventPopup.querySelector('textarea').value = eventData.description || "";
+      
+      // Handle theme checkboxes
+      const themeColors = ["green", "blue", "orange", "purple", "red"];
+      themeColors.forEach((color) => {
+        const checkbox = calendarEventPopup.querySelector(`input[type="checkbox"][value="${color}"]`);
+        if (checkbox) {
+          checkbox.checked = eventData.theme === color;
+        }
+      });
+    } else {
+      // Clear the form for 'add' mode
+      calendarEventPopup.querySelectorAll("input, textarea").forEach((input) => {
+        if (input.type !== "checkbox") {
+          input.value = "";
+        }
+        if (input.type === "checkbox") {
+          input.checked = false;
+        }
+      });
+    }
+
+    calendarEventPopup.style.display = "block";
+    overlay.style.display = "block";
+  }
+
+  // Function to close popup
+  function closePopup() {
+    calendarEventPopup.style.display = "none";
+    overlay.style.display = "none";
+    popupMode = "";
+  }
+
+  // Function to open delete popup
+  function openDeletePopup() {
+    deletePopup.style.display = "block";
+    overlay.style.display = "block";
+  }
+
+  // Function to close delete popup
+  function closeDeletePopup() {
+    deletePopup.style.display = "none";
+    overlay.style.display = "none";
+  }
+
+  // Event listener for closing popup
+  popupCloseIcon.addEventListener("click", closePopup);
+  popupCancelButton.addEventListener("click", closePopup);
+  popupSaveButton.addEventListener("click", () => {
+    // Save functionality can be implemented here
+    closePopup();
+  });
+
+  // Event listener for closing delete popup
+  deleteCloseButton.addEventListener("click", closeDeletePopup);
+  deleteConfirmButton.addEventListener("click", () => {
+    // Delete functionality can be implemented here
+    closeDeletePopup();
+  });
+
+  // Event listener for overlay click to close popups
+  overlay.addEventListener("click", () => {
+    closePopup();
+    closeDeletePopup();
+    // Also close any open dropdowns
+    closeAllDropdowns();
+  });
+
+  // Function to close all dropdowns
+  function closeAllDropdowns() {
+    const allDropdowns = document.querySelectorAll(".ellipsis-drop-down");
+    allDropdowns.forEach((dropdown) => {
+      dropdown.style.display = "none";
+    });
+  }
+
+  // Handle ellipsis dropdown toggle
+  function handleEllipsisToggle(event) {
+    event.stopPropagation(); // Prevent event bubbling
+    const dropdown = this.nextElementSibling;
+    if (dropdown.style.display === "block") {
+      dropdown.style.display = "none";
+    } else {
+      closeAllDropdowns();
+      dropdown.style.display = "block";
+    }
+  }
+
+  // Attach event listeners to all ellipsis icons
+  function attachEllipsisListeners() {
+    const ellipsisIcons = document.querySelectorAll(".fa-ellipsis-vertical");
+    ellipsisIcons.forEach((icon) => {
+      icon.addEventListener("click", handleEllipsisToggle);
+    });
+  }
+
+  // Handle Add Event button click
+  const addEventButton = document.querySelector(".event-button-box button");
+  addEventButton.addEventListener("click", () => {
+    openPopup("add");
+    closeAllDropdowns();
+  });
+
+  // Delegate event listeners for View, Edit, and Delete buttons inside dropdowns
+  document.addEventListener("click", (event) => {
+    // View Button
+    if (event.target.closest(".ellipsis-drop-down button:nth-child(1)")) {
+      const dropdown = event.target.closest(".ellipsis-drop-down");
+      dropdown.style.display = "none";
+      // Fetch event data as needed
+      const eventDetails = event.target.closest(".event").querySelector(".event-details");
+      const date = eventDetails.querySelector(".date").textContent;
+      const time = eventDetails.querySelector(".time").textContent;
+      const participants = eventDetails.querySelector(".name").textContent;
+      // Example eventData structure
+      const eventData = {
+        participants: participants,
+        startDate: "2024-12-01", // This should be parsed from date and time
+        endDate: "2024-12-01",
+        startTime: "10:30",
+        endTime: "17:30",
+        theme: "orange",
+        description: "Event description", // This should be fetched accordingly
+      };
+      openPopup("view", eventData);
+    }
+
+    // Edit Button
+    if (event.target.closest(".ellipsis-drop-down button:nth-child(2)")) {
+      const dropdown = event.target.closest(".ellipsis-drop-down");
+      dropdown.style.display = "none";
+      // Fetch event data as needed
+      const eventDetails = event.target.closest(".event").querySelector(".event-details");
+      const date = eventDetails.querySelector(".date").textContent;
+      const time = eventDetails.querySelector(".time").textContent;
+      const participants = eventDetails.querySelector(".name").textContent;
+      // Example eventData structure
+      const eventData = {
+        participants: participants,
+        startDate: "2024-12-01", // This should be parsed from date and time
+        endDate: "2024-12-01",
+        startTime: "10:30",
+        endTime: "17:30",
+        theme: "orange",
+        description: "Event description", // This should be fetched accordingly
+      };
+      openPopup("edit", eventData);
+    }
+
+    // Delete Button
+    if (event.target.closest(".ellipsis-drop-down button:nth-child(3)")) {
+      const dropdown = event.target.closest(".ellipsis-drop-down");
+      dropdown.style.display = "none";
+      openDeletePopup();
+    }
+  });
+
+  // Initial attachment of ellipsis listeners
+  attachEllipsisListeners();
+
+  // Re-attach ellipsis listeners whenever the calendar is re-rendered
+  // Modify renderCalendar, renderWeekView, renderDayView to call attachEllipsisListeners()
+
+  // Modify existing render functions to re-attach listeners after rendering
+  const originalRenderCalendar = renderCalendar;
+  renderCalendar = function () {
+    originalRenderCalendar();
+    attachEllipsisListeners();
+  };
+
+  const originalRenderWeekView = renderWeekView;
+  renderWeekView = function () {
+    originalRenderWeekView();
+    attachEllipsisListeners();
+  };
+
+  const originalRenderDayView = renderDayView;
+  renderDayView = function () {
+    originalRenderDayView();
+    attachEllipsisListeners();
+  };
+
+  // Rest of the existing code...
+
   function getStartOfWeek(date) {
     const day = date.getDay();
     const diff = (day + 6) % 7;
@@ -151,10 +390,7 @@ document.addEventListener("DOMContentLoaded", () => {
           nextMonthDay++;
           cell.classList.add("next-month");
         } else {
-          const fullDate = `${year}-${String(month + 1).padStart(
-            2,
-            "0"
-          )}-${String(dayCounter).padStart(2, "0")}`;
+          const fullDate = `${year}-${String(month + 1).padStart(2, "0")}-${String(dayCounter).padStart(2, "0")}`;
           cell.textContent = dayCounter;
 
           if (monthEvents[fullDate]) {
@@ -284,9 +520,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       datesInWeek.forEach((date) => {
         const cell = document.createElement("td");
-        const fullDate = `${date.getFullYear()}-${String(
-          date.getMonth() + 1
-        ).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
+        const fullDate = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
 
         if (weekEvents[fullDate]) {
           weekEvents[fullDate].forEach((event) => {
@@ -317,6 +551,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       weekViewBody.appendChild(row);
     }
+
+    attachEllipsisListeners();
   }
 
   function renderDayView() {
@@ -343,9 +579,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const eventCell = document.createElement("td");
       eventCell.classList.add("event-cell");
 
-      const fullDate = `${currentDate.getFullYear()}-${String(
-        currentDate.getMonth() + 1
-      ).padStart(2, "0")}-${String(currentDate.getDate()).padStart(2, "0")}`;
+      const fullDate = `${currentDate.getFullYear()}-${String(currentDate.getMonth() + 1).padStart(2, "0")}-${String(currentDate.getDate()).padStart(2, "0")}`;
 
       if (dayEvents[fullDate]) {
         dayEvents[fullDate].forEach((event) => {
@@ -374,6 +608,8 @@ document.addEventListener("DOMContentLoaded", () => {
       row.appendChild(eventCell);
       dayViewBody.appendChild(row);
     }
+
+    attachEllipsisListeners();
   }
 
   function changeMonth(offset) {
@@ -434,9 +670,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (currentView !== "day") {
       currentView = "day";
       renderDayView();
-      document
-        .querySelectorAll(".view-option")
-        .forEach((el) => el.classList.remove("active"));
+      document.querySelectorAll(".view-option").forEach((el) => el.classList.remove("active"));
       dayViewButton.classList.add("active");
       weekView.classList.add("d-none");
       calendarTable.classList.add("d-none");
@@ -448,9 +682,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (currentView !== "week") {
       currentView = "week";
       renderWeekView();
-      document
-        .querySelectorAll(".view-option")
-        .forEach((el) => el.classList.remove("active"));
+      document.querySelectorAll(".view-option").forEach((el) => el.classList.remove("active"));
       weekViewButton.classList.add("active");
       calendarTable.classList.add("d-none");
       dayView.classList.add("d-none");
@@ -462,9 +694,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (currentView !== "month") {
       currentView = "month";
       renderCalendar();
-      document
-        .querySelectorAll(".view-option")
-        .forEach((el) => el.classList.remove("active"));
+      document.querySelectorAll(".view-option").forEach((el) => el.classList.remove("active"));
       monthViewButton.classList.add("active");
       weekView.classList.add("d-none");
       dayView.classList.add("d-none");
