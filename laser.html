@@ -46,7 +46,7 @@
             </div>
           </a>
           <a href="notification.html">
-            <div class="route d-flex active">
+            <div class="route d-flex">
               <i class="fa-regular fa-message"></i>
               Bildiriş
             </div>
@@ -82,7 +82,7 @@
             </div>
           </a>
           <a href="laser.html">
-            <div class="route d-flex">
+            <div class="route d-flex active">
               <i class="fa-solid fa-charging-station"></i>
               Lazer satış istifadəsi
             </div>
@@ -114,7 +114,7 @@
               <i class="fa-solid fa-gear"></i>
             </a>
           </div>
-          <div class="route d-flex active">
+          <div class="route d-flex">
             <a href="notification.html">
               <i class="fa-regular fa-message"></i>
             </a>
@@ -144,7 +144,7 @@
               <i class="fa-solid fa-heart-pulse"></i>
             </a>
           </div>
-          <div class="route d-flex">
+          <div class="route d-flex active">
             <a href="laser.html">
               <i class="fa-solid fa-charging-station"></i>
             </a>
@@ -184,7 +184,8 @@
                       <i class="fa-solid fa-gear"></i>Tənzimləmələr
                     </button>
                     <button class="d-flex gap-2">
-                      <i class="fa-solid fa-right-from-bracket"></i><a href="index.html">Çıxış</a>
+                      <i class="fa-solid fa-right-from-bracket"></i
+                      ><a href="index.html">Çıxış</a>
                     </button>
                   </div>
                 </div>
@@ -197,20 +198,13 @@
 
     <section id="slot">
       <div class="slot-title">
-        <h4>Bildiriş</h4>
+        <h4>Lazer satış istifadəsi</h4>
       </div>
-      <div class="notification-bg">
+      <div class="laser-bg">
         <div
-          class="search-and-filter-notification d-flex justify-content-between align-items-center"
+          class="search-and-filter-laser d-flex justify-content-between align-items-center"
         >
           <div class="filter d-flex gap-3">
-            <div class="filter-select">
-              <label for="filter">Filter</label>
-              <br />
-              <select name="filter-selection" id="filter-selection">
-                <option value="filter">Cinsiyyət</option>
-              </select>
-            </div>
             <div class="date-inputs d-flex gap-2">
               <div>
                 <label for="start-date">Başlama tarixi</label>
@@ -224,14 +218,12 @@
               </div>
             </div>
           </div>
-          <div class="search-section d-flex align-items-center">
-            <div class="search-box d-flex align-items-center">
-              <i class="fa-solid fa-magnifying-glass"></i>
-              <input type="search" placeholder="Search" />
-            </div>
+          <div class="button-section d-flex align-items-center">
+            <button class="laser-add"><i class="fa-solid fa-plus"></i> Əlavə edin</button>
+            <button class="laser-reset">Sıfırla</button>
           </div>
         </div>
-        <div class="notification-table">
+        <div class="laser-table">
           <table>
             <thead>
               <tr>
@@ -244,9 +236,11 @@
                   </label>
                   Sıra
                 </th>
-                <th>Ad</th>
-                <th>Cinsiyyət</th>
-                <th>Qoşulma tarixi</th>
+                <th>Operator</th>
+                <th>Əvvəl</th>
+                <th>Sonra</th>
+                <th>İstifadə</th>
+                <th>Tarix</th>
               </tr>
             </thead>
             <tbody>
@@ -267,8 +261,10 @@
                     <span>Farid Mirzayev</span>
                   </div>
                 </td>
-                <td>Kişi</td>
-                <td>02/12/2012</td>
+                <td>37000</td>
+                <td>37500</td>
+                <td>500</td>
+                <td>20.03.2024</td>
               </tr>
               <tr>
                 <td>
@@ -286,8 +282,10 @@
                     <span>Farid Mirzayev</span>
                   </div>
                 </td>
-                <td>Kişi</td>
-                <td>02/12/2012</td>
+                <td>37000</td>
+                <td>37500</td>
+                <td>500</td>
+                <td>20.03.2024</td>
               </tr>
               <tr>
                 <td>
@@ -305,34 +303,17 @@
                     <span>Farid Mirzayev</span>
                   </div>
                 </td>
-                <td>Kişi</td>
-                <td>02/12/2012</td>
-              </tr>
-              <tr>
-                <td>
-                  <label class="custom-checkbox">
-                    <input type="checkbox" />
-                    <span class="checkmark">
-                      <i class="fa-solid fa-check"></i>
-                    </span>
-                  </label>
-                  01
-                </td>
-                <td>
-                  <div class="user-info d-flex align-items-center">
-                    <img src="images/user-mini-pic.png" alt="User" />
-                    <span>Farid Mirzayev</span>
-                  </div>
-                </td>
-                <td>Kişi</td>
-                <td>02/12/2012</td>
+                <td>37000</td>
+                <td>37500</td>
+                <td>500</td>
+                <td>20.03.2024</td>
               </tr>
               <!-- Add more rows as needed -->
             </tbody>
           </table>
         </div>
       </div>
-      <div class="pagination-notification">
+      <div class="pagination-laser">
         <div class="pagination-buttons">
           <button>&laquo;</button>
           <button class="active">1</button>
@@ -342,9 +323,6 @@
           <button>5</button>
           <button>&raquo;</button>
         </div>
-        <a href="notification-send.html">
-          <button>Təsdiqlə</button>
-        </a>
       </div>
     </section>
 
