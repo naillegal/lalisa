@@ -275,8 +275,29 @@
     background-color: white;
     padding: 20px;
     width: 640px;
-    height: 385;
+    max-height: 600px;
     border-radius: 20px;
+    .add-services-category {
+      padding-bottom: 20px;
+      input {
+        padding: 10px 5px;
+        border-radius: 8px;
+        outline: none;
+        background-color: transparent;
+        border: 1px solid rgba(209, 213, 219, 1);
+        width: 80%;
+      }
+      button {
+        background-color: rgba(244, 148, 30, 1);
+        border: 1px solid rgba(244, 148, 30, 1);
+        border-radius: 8px;
+        padding: 10px;
+        color: white;
+        i {
+          margin-right: 8px;
+        }
+      }
+    }
     .close-services-category-popup-btn {
       display: flex;
       justify-content: flex-end;
@@ -287,6 +308,9 @@
       }
     }
     .services-category-popup-middle {
+      overflow: auto;
+      scrollbar-width: thin;
+      max-height: 400px;
       .services-category-popup-table {
         margin-bottom: 20px;
         background-color: #ffffff;
@@ -295,7 +319,7 @@
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
         border: 1px solid #e0e0e0;
-        width: 100%;
+        width: 99%;
         table {
           width: 100%;
           border-collapse: collapse;

@@ -3842,8 +3842,29 @@
   background-color: white;
   padding: 20px;
   width: 640px;
-  height: 385;
+  max-height: 600px;
   border-radius: 20px;
+}
+#slot .services-category-popup .add-services-category {
+  padding-bottom: 20px;
+}
+#slot .services-category-popup .add-services-category input {
+  padding: 10px 5px;
+  border-radius: 8px;
+  outline: none;
+  background-color: transparent;
+  border: 1px solid rgb(209, 213, 219);
+  width: 80%;
+}
+#slot .services-category-popup .add-services-category button {
+  background-color: rgb(244, 148, 30);
+  border: 1px solid rgb(244, 148, 30);
+  border-radius: 8px;
+  padding: 10px;
+  color: white;
+}
+#slot .services-category-popup .add-services-category button i {
+  margin-right: 8px;
 }
 #slot .services-category-popup .close-services-category-popup-btn {
   display: flex;
@@ -3854,6 +3875,11 @@
   color: rgb(127, 127, 127);
   font-size: 25px;
 }
+#slot .services-category-popup .services-category-popup-middle {
+  overflow: auto;
+  scrollbar-width: thin;
+  max-height: 400px;
+}
 #slot .services-category-popup .services-category-popup-middle .services-category-popup-table {
   margin-bottom: 20px;
   background-color: #ffffff;
@@ -3862,7 +3888,7 @@
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   border: 1px solid #e0e0e0;
-  width: 100%;
+  width: 99%;
 }
 #slot .services-category-popup .services-category-popup-middle .services-category-popup-table table {
   width: 100%;
