@@ -10,13 +10,9 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="stylesheet" href="vendors/bootstrap.min.css" />
-    <title>Lalisa - Users</title>
+    <title>Lalisa - Services</title>
   </head>
   <body style="background-color: rgba(245, 246, 250, 1)">
     <section id="layout">
@@ -44,7 +40,7 @@
             </div>
           </a>
           <a href="services.html">
-            <div class="route d-flex">
+            <div class="route d-flex active">
               <i class="fa-solid fa-gear"></i>
               Xidmətlər
             </div>
@@ -74,7 +70,7 @@
             </div>
           </a>
           <a href="discount-code.html">
-            <div class="route d-flex active">
+            <div class="route d-flex">
               <i class="fa-solid fa-square-binary"></i>
               Endirim kodu
             </div>
@@ -113,7 +109,7 @@
               <i class="fa-solid fa-user"></i>
             </a>
           </div>
-          <div class="route d-flex">
+          <div class="route d-flex active">
             <a href="services.html">
               <i class="fa-solid fa-gear"></i>
             </a>
@@ -138,7 +134,7 @@
               <i class="fa-solid fa-file-lines"></i>
             </a>
           </div>
-          <div class="route d-flex active">
+          <div class="route d-flex">
             <a href="discount-code.html">
               <i class="fa-solid fa-square-binary"></i>
             </a>
@@ -188,7 +184,8 @@
                       <i class="fa-solid fa-gear"></i>Tənzimləmələr
                     </button>
                     <button class="d-flex gap-2">
-                      <i class="fa-solid fa-right-from-bracket"></i><a href="index.html">Çıxış</a>
+                      <i class="fa-solid fa-right-from-bracket"></i
+                      ><a href="index.html">Çıxış</a>
                     </button>
                   </div>
                 </div>
@@ -200,178 +197,195 @@
     </section>
 
     <section id="slot">
-      <div class="discount-upside-bg">
-        <div class="discount-relative">
-          <img src="images/discount-bg.png" alt="" />
-          <div>
-            <div class="discount-absolute">
-              <div class="d-flex">
-                <div>
-                  <h1>Yeni Endirim<br />Kodu Yarat</h1>
-                </div>
-                <div class="absolute-button">
-                  <button>LALİSA</button>
-                </div>
-              </div>
-              <p>
-                Müştəriləriniz üçün xüsusi endirimlər təklif etmək üçün yeni bir
-                kod yaradın. Endirim kodunu, məbləğini və etibarlılıq tarixini
-                təyin edin.
-              </p>
-              <div class="submit-code d-flex gap-4">
-                <div>
-                  <input type="text" placeholder="Endirim kodunu daxil et" />
-                </div>
-                <div class="code-buttons d-flex gap-2">
-                  <button class="submit">Tətbiq et</button>
-                  <button class="activity-time">Aktivlik müddəti</button>
-                  <button class="infinity">Limitsiz</button>
-                  <button class="with-time">1-30 gün</button>
-                  
-                </div>
-              </div>
-            </div>
-            <div class="discount-animation-absolute">
-              <img src="images/discount-animation.png" alt="" />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="discount-code-table-upper">
-        <div class="title">Endirim Kodlarının İdarəsi</div>
-        <div class="date-filter d-flex gap-3">
-          <div class="date-inputs d-flex gap-2">
-            <div>
-              <label for="start-date">Başlama tarixi</label>
-              <br />
-              <input type="date" />
-            </div>
-            <div>
-              <label for="end-date">Bitmə tarixi</label>
-              <br />
-              <input type="date" />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="discount-table">
-        <table>
-          <thead>
-            <tr>
-              <th>
-                <label class="custom-checkbox">
-                  <input type="checkbox" />
-                  <span class="checkmark">
-                    <i class="fa-solid fa-check"></i>
-                  </span>
-                </label>
-                Sıra
-              </th>
-              <th>Endirim kodu</th>
-              <th>İstifadə</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- Example row -->
-            <tr>
-              <td>
-                <label class="custom-checkbox">
-                  <input type="checkbox" />
-                  <span class="checkmark">
-                    <i class="fa-solid fa-check"></i>
-                  </span>
-                </label>
-                01
-              </td>
-              <td>
-                <div class="user-info d-flex align-items-center">
-                  <span>NOYABR 2024</span>
-                </div>
-              </td>
-              <td>200</td>
-              <td><button class="toggle-status"></button></td>
-            </tr>
-            <tr>
-              <td>
-                <label class="custom-checkbox">
-                  <input type="checkbox" />
-                  <span class="checkmark">
-                    <i class="fa-solid fa-check"></i>
-                  </span>
-                </label>
-                01
-              </td>
-              <td>
-                <div class="user-info d-flex align-items-center">
-                  <span>NOYABR 2024</span>
-                </div>
-              </td>
-              <td>200</td>
-              <td><button class="toggle-status"></button></td>
-            </tr>
-            <tr>
-              <td>
-                <label class="custom-checkbox">
-                  <input type="checkbox" />
-                  <span class="checkmark">
-                    <i class="fa-solid fa-check"></i>
-                  </span>
-                </label>
-                01
-              </td>
-              <td>
-                <div class="user-info d-flex align-items-center">
-                  <span>NOYABR 2024</span>
-                </div>
-              </td>
-              <td>200</td>
-              <td><button class="toggle-status"></button></td>
-            </tr>
-            <tr>
-              <td>
-                <label class="custom-checkbox">
-                  <input type="checkbox" />
-                  <span class="checkmark">
-                    <i class="fa-solid fa-check"></i>
-                  </span>
-                </label>
-                01
-              </td>
-              <td>
-                <div class="user-info d-flex align-items-center">
-                  <span>NOYABR 2024</span>
-                </div>
-              </td>
-              <td>200</td>
-              <td><button class="toggle-status"></button></td>
-            </tr>
-
-            <!-- Add more rows as needed -->
-          </tbody>
-        </table>
-      </div>
-      <div class="activity-time-popup">
-        <div class="activity-time-popup-img">
-          <img src="images/discount-popup-img.png" alt="">
-        </div>
-        <div class="activity-time-popup-middle">
-          <h5>Aktivlik müddəti</h5>
-        </div>
-
+      <div class="services-upside">
         <div
-          class="activity-time-popup-btns d-flex justify-content-center gap-5"
+          class="title-and-add-services d-flex justify-content-between align-items-center"
         >
-          <button class="activity-time-popup-month">1-30 gün</button>
-          <button class="activity-time-popup-infinity">
-            Limitsiz
-          </button>
+          <div>
+            <h4>Xidmətlər</h4>
+          </div>
+          <div class="add-services">
+            <button><i class="fa-solid fa-plus"></i> Əlavə edin</button>
+          </div>
+        </div>
+      </div>
+      <div class="services-table-bg">
+        <div class="services-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Xidmətlər</th>
+                <th>Kateqoriya</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Example row -->
+              <tr>
+                <td>Lazer</td>
+                <td>Lazer epilyasiya</td>
+              </tr>
+              <tr>
+                <td>Lazer</td>
+                <td>Lazer epilyasiya</td>
+              </tr>
+              <tr>
+                <td>Lazer</td>
+                <td>Lazer epilyasiya</td>
+              </tr>
+              <!-- Add more rows as needed -->
+            </tbody>
+          </table>
+        </div>
+        <div class="pagination-services">
+          <div class="pagination-buttons">
+            <button>&laquo;</button>
+            <button class="active">1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>4</button>
+            <button>5</button>
+            <button>&raquo;</button>
+          </div>
+        </div>
+      </div>
+      <div class="services-popup">
+        <div class="close-services-popup-btn">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+        <div class="services-popup-middle">
+          <div class="service-name form-group">
+            <label for="service-name">Xidmətin adı</label>
+            <br />
+            <input type="text" placeholder="Xidmətin adını qeyd edin" />
+          </div>
+          <div class="services-category">
+            <label for="category-button">Kateqoriya</label>
+            <br />
+            <button><i class="fa-solid fa-plus"></i>Kateqoriya seç</button>
+          </div>
+          <div class="selected-services-category">
+            <label
+              class="selected-services-category-title"
+              for="selected-services-category"
+              >Seçilmiş kateqoriyalar</label
+            >
+            <br />
+            <div class="d-flex gap-3 flex-wrap">
+              <div
+                class="selected-services-category-checkbox-and-name d-flex gap-2"
+              >
+                <label class="custom-checkbox">
+                  <input type="checkbox" />
+                  <span class="checkmark">
+                    <i class="fa-solid fa-check"></i>
+                  </span>
+                </label>
+                <div class="selected-services-category-name">Lazer</div>
+              </div>
+              <div
+                class="selected-services-category-checkbox-and-name d-flex gap-2"
+              >
+                <label class="custom-checkbox">
+                  <input type="checkbox" />
+                  <span class="checkmark">
+                    <i class="fa-solid fa-check"></i>
+                  </span>
+                </label>
+                <div class="selected-services-category-name">Lazer</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="services-popup-btns d-flex justify-content-center gap-5">
+          <button class="services-popup-close">Çıxış</button>
+          <button class="services-popup-confirm">Təsdiq et</button>
+        </div>
+      </div>
+      <div class="services-category-popup">
+        <div class="services-category-popup-middle">
+          <div class="services-category-popup-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>
+                    <label class="custom-checkbox">
+                      <input type="checkbox" />
+                      <span class="checkmark">
+                        <i class="fa-solid fa-check"></i>
+                      </span>
+                    </label>
+                    Hamısı
+                  </th>
+                  <th>Kateqoriya</th>
+                  <th><i class="fa-solid fa-xmark"></i></th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Example row -->
+                <tr>
+                  <td>1</td>
+                  <td>Lazer epilyasiya</td>
+                  <td>
+                    <label class="custom-checkbox">
+                      <input type="checkbox" />
+                      <span class="checkmark">
+                        <i class="fa-solid fa-check"></i>
+                      </span>
+                    </label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>Lazer epilyasiya</td>
+                  <td>
+                    <label class="custom-checkbox">
+                      <input type="checkbox" />
+                      <span class="checkmark">
+                        <i class="fa-solid fa-check"></i>
+                      </span>
+                    </label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>Lazer epilyasiya</td>
+                  <td>
+                    <label class="custom-checkbox">
+                      <input type="checkbox" />
+                      <span class="checkmark">
+                        <i class="fa-solid fa-check"></i>
+                      </span>
+                    </label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>Lazer epilyasiya</td>
+                  <td>
+                    <label class="custom-checkbox">
+                      <input type="checkbox" />
+                      <span class="checkmark">
+                        <i class="fa-solid fa-check"></i>
+                      </span>
+                    </label>
+                  </td>
+                </tr>
+                <!-- Add more rows as needed -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div
+          class="services-category-popup-btns d-flex justify-content-center gap-5"
+        >
+          <button class="services-category-popup-close">Çıxış</button>
+          <button class="services-category-popup-confirm">Təsdiq et</button>
         </div>
       </div>
     </section>
     <div id="overlay"></div>
 
-    <script src="scripts/discount-code.js"></script>
+    <script src="scripts/services.js"></script>
     <script src="scripts/users.js"></script>
     <script src="scripts/sidebarToggle.js"></script>
     <script src="scripts/main.js"></script>

@@ -3597,4 +3597,353 @@
 #slot .areainput .area-button button.active {
   background-color: rgb(84, 186, 79);
   color: #ffffff;
+}
+
+#slot .services-upside {
+  padding: 20px 20px 0px 20px;
+}
+#slot .services-upside .title-and-add-services {
+  margin-bottom: 20px;
+}
+#slot .services-upside .title-and-add-services .add-services button {
+  background-color: rgb(84, 186, 79);
+  color: #ffffff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s ease-in-out;
+}
+#slot .services-upside .title-and-add-services .add-services button i {
+  margin-right: 5px;
+}
+#slot .services-upside .title-and-add-services .add-services button:hover {
+  background-color: #218838;
+}
+#slot .services-table-bg {
+  width: 99%;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+#slot .services-table-bg .services-table {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border: 1px solid #e0e0e0;
+}
+#slot .services-table-bg .services-table table {
+  width: 100%;
+  border-collapse: collapse;
+  color: rgb(75, 85, 99);
+}
+#slot .services-table-bg .services-table table thead {
+  background-color: rgb(245, 246, 250);
+  border-bottom: 1px solid #e0e0e0;
+}
+#slot .services-table-bg .services-table table thead th {
+  padding: 20px 50px;
+  text-align: left;
+  color: rgb(17, 24, 39);
+  font-weight: 500;
+}
+#slot .services-table-bg .services-table table thead th:last-child {
+  border-top-right-radius: 10px;
+  text-align: right;
+}
+#slot .services-table-bg .services-table table thead th:first-child {
+  border-top-left-radius: 10px;
+}
+#slot .services-table-bg .services-table table tbody tr td {
+  padding: 17px 50px;
+  border-bottom: 1px solid #e0e0e0;
+  position: relative;
+}
+#slot .services-table-bg .services-table table tbody tr td::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 1px;
+  background-color: #e0e0e0;
+}
+#slot .services-table-bg .services-table table tbody tr td:last-child::after {
+  display: none;
+}
+#slot .services-table-bg .services-table table tbody tr td:last-child {
+  text-align: right;
+}
+#slot .services-table-bg .services-table table tbody tr:last-child td {
+  border-bottom: none;
+}
+#slot .services-table-bg .pagination-services {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin-top: 40px;
+}
+#slot .services-table-bg .pagination-services span {
+  color: rgb(75, 85, 99);
+  font-size: 14px;
+}
+#slot .services-table-bg .pagination-services .pagination-buttons {
+  display: flex;
+  gap: 5px;
+}
+#slot .services-table-bg .pagination-services .pagination-buttons button {
+  padding: 5px 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: rgb(235, 236, 239);
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  font-weight: 500;
+  color: rgb(75, 85, 99);
+}
+#slot .services-table-bg .pagination-services .pagination-buttons button:hover {
+  background-color: rgb(84, 186, 79);
+  color: white;
+}
+#slot .services-table-bg .pagination-services .pagination-buttons button.active {
+  background-color: rgb(84, 186, 79);
+  color: #ffffff;
+}
+#slot .services-popup {
+  display: none;
+  z-index: 300;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  width: 340px;
+  height: 385;
+  border-radius: 20px;
+  text-align: center;
+}
+#slot .services-popup .close-services-popup-btn {
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+#slot .services-popup .close-services-popup-btn i {
+  color: rgb(127, 127, 127);
+  font-size: 25px;
+}
+#slot .services-popup .services-popup-middle .service-name label {
+  color: rgb(17, 24, 39);
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 10px;
+  float: left;
+}
+#slot .services-popup .services-popup-middle .service-name input {
+  padding: 10px 5px;
+  border-radius: 8px;
+  outline: none;
+  background-color: transparent;
+  border: 1px solid rgb(209, 213, 219);
+  width: 100%;
+}
+#slot .services-popup .services-popup-middle .services-category {
+  padding: 30px 0px;
+}
+#slot .services-popup .services-popup-middle .services-category label {
+  color: rgb(17, 24, 39);
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 10px;
+  float: left;
+}
+#slot .services-popup .services-popup-middle .services-category button {
+  background-color: rgb(84, 186, 79);
+  color: white;
+  border: 1px solid rgb(84, 186, 79);
+  padding: 12px 42px;
+  width: 100%;
+  border-radius: 8px;
+  outline: none;
+}
+#slot .services-popup .services-popup-middle .services-category button i {
+  margin-right: 5px;
+}
+#slot .services-popup .services-popup-middle .selected-services-category .selected-services-category-title {
+  color: rgb(17, 24, 39);
+  font-weight: 600;
+  font-size: 16px;
+  float: left;
+}
+#slot .services-popup .services-popup-middle .selected-services-category .selected-services-category-checkbox-and-name {
+  padding: 10px 0px;
+}
+#slot .services-popup .services-popup-middle .selected-services-category .selected-services-category-checkbox-and-name .custom-checkbox {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+#slot .services-popup .services-popup-middle .selected-services-category .selected-services-category-checkbox-and-name .custom-checkbox input[type=checkbox] {
+  display: none;
+}
+#slot .services-popup .services-popup-middle .selected-services-category .selected-services-category-checkbox-and-name .custom-checkbox .checkmark {
+  width: 16px;
+  height: 16px;
+  border: 1px solid rgb(107, 114, 128);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+}
+#slot .services-popup .services-popup-middle .selected-services-category .selected-services-category-checkbox-and-name .custom-checkbox .checkmark i {
+  font-size: 14px;
+  color: transparent;
+  transition: color 0.3s ease;
+}
+#slot .services-popup .services-popup-middle .selected-services-category .selected-services-category-checkbox-and-name .custom-checkbox input[type=checkbox]:checked + .checkmark {
+  background-color: rgb(84, 186, 79);
+  border-color: rgb(84, 186, 79);
+}
+#slot .services-popup .services-popup-middle .selected-services-category .selected-services-category-checkbox-and-name .custom-checkbox input[type=checkbox]:checked + .checkmark i {
+  color: #ffffff;
+}
+#slot .services-popup .services-popup-middle .selected-services-category .selected-services-category-checkbox-and-name .selected-services-category-name {
+  color: rgb(75, 85, 99);
+  font-size: 14px;
+  margin-bottom: 2.5px;
+}
+#slot .services-popup .services-popup-btns {
+  margin-top: 10px;
+}
+#slot .services-popup .services-popup-btns .services-popup-close {
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(220, 38, 38);
+  border-radius: 8px;
+  padding: 8px 15px;
+  color: rgb(220, 38, 38);
+}
+#slot .services-popup .services-popup-btns .services-popup-confirm {
+  background-color: rgb(13, 110, 253);
+  border: 1px solid rgb(13, 110, 253);
+  border-radius: 8px;
+  padding: 8px 15px;
+  color: white;
+}
+#slot .services-category-popup {
+  display: none;
+  z-index: 400;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  width: 640px;
+  height: 385;
+  border-radius: 20px;
+}
+#slot .services-category-popup .close-services-category-popup-btn {
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+#slot .services-category-popup .close-services-category-popup-btn i {
+  color: rgb(127, 127, 127);
+  font-size: 25px;
+}
+#slot .services-category-popup .services-category-popup-middle .services-category-popup-table {
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border: 1px solid #e0e0e0;
+  width: 100%;
+}
+#slot .services-category-popup .services-category-popup-middle .services-category-popup-table table {
+  width: 100%;
+  border-collapse: collapse;
+  color: rgb(29, 28, 43);
+}
+#slot .services-category-popup .services-category-popup-middle .services-category-popup-table table thead {
+  background-color: rgb(245, 246, 250);
+}
+#slot .services-category-popup .services-category-popup-middle .services-category-popup-table table thead th {
+  padding: 20px;
+  border-bottom: 1px solid #e0e0e0;
+  color: rgb(17, 24, 39);
+  font-weight: 500;
+}
+#slot .services-category-popup .services-category-popup-middle .services-category-popup-table table thead th:last-child {
+  border-top-right-radius: 10px;
+  text-align: right;
+}
+#slot .services-category-popup .services-category-popup-middle .services-category-popup-table table thead th:first-child {
+  border-top-left-radius: 10px;
+}
+#slot .services-category-popup .services-category-popup-middle .services-category-popup-table table thead th .fa-xmark {
+  font-size: 25px;
+  cursor: pointer;
+}
+#slot .services-category-popup .services-category-popup-middle .services-category-popup-table table tbody tr td {
+  padding: 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+#slot .services-category-popup .services-category-popup-middle .services-category-popup-table table tbody tr td:last-child {
+  text-align: right;
+}
+#slot .services-category-popup .services-category-popup-middle .services-category-popup-table table tbody tr:last-child td {
+  border-bottom: none;
+}
+#slot .services-category-popup .services-category-popup-middle .services-category-popup-table table .custom-checkbox {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+#slot .services-category-popup .services-category-popup-middle .services-category-popup-table table .custom-checkbox input[type=checkbox] {
+  display: none;
+}
+#slot .services-category-popup .services-category-popup-middle .services-category-popup-table table .custom-checkbox .checkmark {
+  width: 16px;
+  height: 16px;
+  border: 1px solid rgb(107, 114, 128);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+}
+#slot .services-category-popup .services-category-popup-middle .services-category-popup-table table .custom-checkbox .checkmark i {
+  font-size: 14px;
+  color: transparent;
+  transition: color 0.3s ease;
+}
+#slot .services-category-popup .services-category-popup-middle .services-category-popup-table table .custom-checkbox input[type=checkbox]:checked + .checkmark {
+  background-color: rgb(84, 186, 79);
+  border-color: rgb(84, 186, 79);
+}
+#slot .services-category-popup .services-category-popup-middle .services-category-popup-table table .custom-checkbox input[type=checkbox]:checked + .checkmark i {
+  color: #ffffff;
+}
+#slot .services-category-popup .services-category-popup-btns {
+  margin-top: 10px;
+}
+#slot .services-category-popup .services-category-popup-btns .services-category-popup-close {
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(220, 38, 38);
+  border-radius: 8px;
+  padding: 8px 15px;
+  color: rgb(220, 38, 38);
+}
+#slot .services-category-popup .services-category-popup-btns .services-category-popup-confirm {
+  background-color: rgb(13, 110, 253);
+  border: 1px solid rgb(13, 110, 253);
+  border-radius: 8px;
+  padding: 8px 15px;
+  color: white;
 }/*# sourceMappingURL=style.css.map */
